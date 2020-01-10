@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>wk 1: Incremental Development</title>
+
+  <script src='../embed-scripts/code-along.js'></script>
+
+  <link rel="stylesheet" href="../reveal.js/css/reset.css">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="../reveal.js/css/theme/night.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <!-- <link rel="stylesheet" href="./reveal.js/lib/css/monokai.css"> -->
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = '../reveal.js/stylesheet';
+    link.type = '../reveal.js/text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <style>
+    /* https://stackoverflow.com/questions/25479420/how-to-add-a-fixed-footer-on-all-slides */
+    .reveal .footer {
+      position: absolute;
+      bottom: 1em;
+      left: 1em;
+      font-size: 0.5em;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="reveal">
+
+    <div class='footer'>
+      <code id="footer-text">ESC to overview</code>
+      <br>
+      <a id='to-repo' style='visibility:hidden'
+        href="https://github.com/hackyourfuturebelgium/separation-of-concerns/tree/master/week-1" target="_blank">
+        <code>to module repo</code>
+      </a>
+    </div>
+
+    <div class="slides">
+
+      <section id='cover-slide'>
+        <h2>Separation of Concerns</h2>
+        <br>
+        <p>Week 1</p>
+      </section>
+      <section id='code-along-poc'>
+        <script>
+          codeAlong({
+            title: 'variable swap',
+            container: 'code-along-poc',
+            source: [
+              {
+                name: "0. setup",
+                path: "./value-swap/0-setup.js",
+              },
+              {
+                name: "1. store a's value for later",
+                path: "./value-swap/1-store-2.js",
+              },
+              {
+                name: "2. assign b's value to a",
+                path: "./value-swap/2-reassign-a.js",
+              },
+              {
+                name: '3. assign stored value to b',
+                path: "./value-swap/3-use-stored-value.js",
+              },
+            ],
+          });
+        </script>
+      </section>
+
+      <section id="thats-all">
+        <h2>Separation of Concerns</h2>
+        <br>
+        <p>Week 1</p>
+        <br>
+      </section>
+
+
+    </div>
+  </div>
+
+  <script src="../reveal.js/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      width: "100%",
+      height: "100%",
+      keyboard: {
+        // 27: function () {  }, // do something custom when ESC is pressed
+      },
+      dependencies: [
+        // { src: 'plugin/markdown/marked.js' },
+        // { src: 'plugin/markdown/markdown.js' },
+        // { src: './reveal.js/plugin/notes/notes.js', async: true },
+        // { src: './reveal.js/plugin/chalkboard/chalkboard.js' },
+        // { src: 'plugin/highlight/highlight.js', async: true }
+      ]
+    });
+
+    Reveal.addEventListener('overviewshown', function (event) {
+      document.getElementById('footer-text').innerHTML = "ESC into slide";
+      document.getElementById('to-repo').style.visibility = 'visible';
+    });
+    Reveal.addEventListener('overviewhidden', function (event) {
+      document.getElementById('footer-text').innerHTML = "ESC to overview";
+      document.getElementById('to-repo').style.visibility = 'visible';
+    });
+
+
+  </script>
+</body>
+
+</html>
