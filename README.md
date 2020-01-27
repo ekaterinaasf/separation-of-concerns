@@ -18,15 +18,15 @@ The idea that a software system must be decomposed into parts that overlap in fu
 * [Homework Submission](https://github.com/hackyourfuturebelgium/homework-submission) (external)
 * Week 1:
   * [Prep Work](./week-1)
-  * [Lesson Plan](https://hackyourfuture.be/incremental-development/week-1)
+  * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-1)
   * [Assignments](./week-1#assignments)
 * Week 2:
   * [Prep Work](./week-2)
-  * [Lesson Plan](https://hackyourfuture.be/incremental-development/week-2)
+  * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-2)
   * [Assignments](./week-2#assignments)
 * Week 3:
   * [Prep Work](./week-3)
-  * [Lesson Plan](https://hackyourfuture.be/incremental-development/week-3)
+  * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-3)
   * [Assignments](./week-3#assignments)
 * [Deeper Dives](./deeper-dives.md)
 * [Class Recordings](./class-recordings.md)
