@@ -9,3 +9,4 @@ a = "2", b = "1", temp = null;
 // assert expected values
 console.assert(a === "1", "a should store 1. it has " + a);
 console.assert(b === "2", "b should store 2. it has " + b);
+console.log("final value of temp: " + temp);

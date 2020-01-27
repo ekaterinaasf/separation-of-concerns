@@ -1,6 +1,7 @@
 {
   const configSchema = {
     container: 'string, element, empty',
+    type: 'string, what kind of code-along to render.  javascript/js or document for now',
     title: 'string, to become a main header',
     source: 'undefined -> empty code-along. string -> fetch from relative path. object -> name & path. array of strings or objects -> tabbed the-previous-things'
   }
@@ -101,7 +102,7 @@ async function codeAlong(config) {
 
 
   // { iframe  }
-  const setup = await codeAlong.setup(steps, config.title);
+  const setup = await codeAlong.setup(steps, config);
   container.appendChild(setup);
 
 
@@ -119,7 +120,7 @@ async function codeAlong(config) {
 
 }
 
-codeAlong.setup = async (steps, title) => {
+codeAlong.setup = async (steps, config) => {
 
   const result = {};
 
@@ -127,6 +128,7 @@ codeAlong.setup = async (steps, title) => {
   iframe.style = 'height:90vh;width:100%;overflow:hidden;background-color:white;';
   // iframe.setAttribute('scrolling', 'no');
   result.iframe = iframe;
+
 
   iframe.onload = async () => {
 
@@ -143,39 +145,190 @@ codeAlong.setup = async (steps, title) => {
     });
 
 
-    const stepsContainer = document.createElement('div');
+    // async total side-effect
+    if (config.type === 'document') {
+      codeAlong.document(iframe, steps, config);
+    } else if (config.type === 'js' || config.type === 'javascript') {
+      codeAlong.js(iframe, steps, config);
+    } else {
+      codeAlong.js(iframe, steps, config);
+    }
 
-    const editorContainer = document.createElement('div');
-    editorContainer.style = 'height:100vh;width:60vw;';
+  }
 
-    const ace = iframe.contentWindow.ace;
-    const editor = ace.edit(editorContainer);
-    editor.setTheme('ace/theme/twilight');
-    editor.setFontSize(12);
-    editor.getSession().setMode('ace/mode/javascript');
-    editor.getSession().setTabSize(2);
+  return iframe;
+
+}
+
+codeAlong.document = (iframe, steps, config) => {
+  const title = config.title;
+
+  const stepsContainer = document.createElement('div');
+
+  const editorContainer = document.createElement('div');
+  editorContainer.style = 'height:100vh;width:55vw;';
+
+  const ace = iframe.contentWindow.ace;
+  const editor = ace.edit(editorContainer);
+  editor.setTheme('ace/theme/chrome');
+  editor.setFontSize(12);
+  editor.getSession().setMode('ace/mode/html');
+  editor.getSession().setTabSize(2);
 
 
-    if (steps.length === 0) {
-      const defaultCode = "// https://developer.mozilla.org/en-US/docs/Web/API/Console/assert\n" +
-        "console.assert(true, 'passing assert');\n" +
-        "console.assert(false, 'failing assert');\n" +
-        "\n// psst. Open your console for logging!";
-      steps.push({
-        code: defaultCode,
-        name: 'default'
-      })
-    };
+  if (steps.length === 0) {
+    const defaultCode = "// https://developer.mozilla.org/en-US/docs/Web/API/Console/assert\n" +
+      "console.assert(true, 'passing assert');\n" +
+      "console.assert(false, 'failing assert');\n" +
+      "\n// psst. Open your console for logging!";
+    steps.push({
+      code: defaultCode,
+      name: 'default'
+    })
+  };
 
-    steps.forEach(step => {
-      step.session = ace.createEditSession(step.code, 'javascript');
-      step.session.setMode('ace/mode/javascript');
-    });
+  steps.forEach(step => {
+    step.session = ace.createEditSession(step.code, 'html');
+    step.session.setMode('ace/mode/html');
+  });
 
-    const resultsContainer = document.createElement('div');
-
+  if (steps.length > 1) {
     const stepButtons = steps.map((step, index) => {
       const button = document.createElement('button');
+      button.style.height = '30px'; // provisoire
+      const name = step.name ? step.name : 'step ' + index;
+      button.innerHTML = name;
+      // clear the results when tabs are switched
+      //  avoid students changing code but not evaluating, switching tabs, then back and not remembering the results are out of date, then being confused by the wrong results.
+      // step.results = document.createElement('div');
+      button.onclick = () => {
+
+        active = step;
+        // console.clear();
+        stepButtons.forEach(stepButton => {
+          stepButton.innerHTML = stepButton.innerHTML
+            .replace('===&gt; ', '')
+            .replace(' &lt;===', '');
+        })
+        button.innerHTML = '===> ' + button.innerHTML + ' <===';
+
+        editor.setSession(step.session);
+        outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(editor.getValue());
+
+      }
+      step.button = button;
+      return button;
+    });
+
+    const buttonsContainer = steps
+      .reduce((div, step) => {
+        div.appendChild(step.button);
+        return div;
+      }, document.createElement('div'));
+    stepsContainer.appendChild(buttonsContainer);
+
+    steps[0].button.innerHTML = '===> ' + steps[0].name + ' <===';
+  }
+
+  stepsContainer.appendChild(editorContainer);
+
+  editor.setSession(steps[0].session);
+  editor.setValue(steps[0].code);
+
+  const hixieButton = document.createElement('button');
+  hixieButton.innerHTML = 'study in Live DOM Viewer';
+  hixieButton.onclick = () => {
+    const encodedHTML = encodeURIComponent(editor.getValue());
+    const url = "https://software.hixie.ch/utilities/js/live-dom-viewer/?" + encodedHTML;
+    window.open(url, "_blank");
+  };
+
+  const newTabButton = document.createElement('button');
+  newTabButton.innerHTML = 'inspect/debug in new tab';
+  newTabButton.onclick = () => {
+    const x = window.open();
+    x.document.open();
+    x.document.write(editor.getValue());
+    x.document.close();
+  }
+
+
+  const buttonDiv = document.createElement('div');
+  buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
+  buttonDiv.appendChild(newTabButton);
+  buttonDiv.appendChild(hixieButton);
+
+
+  const outputEl = document.createElement('iframe');
+  // can do better than this
+  config.title
+    ? outputEl.style = "width:100%;height:85%;"
+    : outputEl.style = "width:100%;height:90%;";
+  outputEl.id = '\n-- study: rendered DOM --\n';
+  outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(steps[0].code);
+
+  const outputContainer = document.createElement('div');
+  outputContainer.style = 'height: 100vh; width: 40vw; border:solid 1px; padding-left:1%; padding-right:1%;';
+  if (typeof title === 'string') {
+    const titleEl = document.createElement('h1');
+    titleEl.innerHTML = title;
+    titleEl.style = 'text-align: center; margin-bottom:0%; margin-top:1%;';
+    outputContainer.appendChild(titleEl);
+  }
+  outputContainer.appendChild(buttonDiv);
+  outputContainer.appendChild(outputEl);
+
+  editor.on("change", (e) => {
+    outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(editor.getValue());
+  });
+
+
+  iframe.contentDocument.body.style = 'display:flex; flex-direction:row;';
+  iframe.contentDocument.body.appendChild(stepsContainer);
+  iframe.contentDocument.body.appendChild(outputContainer);
+
+}
+
+codeAlong.js = (iframe, steps, config) => {
+  console.log(config)
+  const title = config.title;
+
+  const stepsContainer = document.createElement('div');
+
+  const editorContainer = document.createElement('div');
+  editorContainer.style = 'height:100vh;width:60vw;';
+
+  const ace = iframe.contentWindow.ace;
+  const editor = ace.edit(editorContainer);
+  editor.setTheme('ace/theme/chrome');
+  editor.setFontSize(12);
+  editor.getSession().setMode('ace/mode/javascript');
+  editor.getSession().setTabSize(2);
+
+
+  if (steps.length === 0) {
+    const defaultCode = "// https://developer.mozilla.org/en-US/docs/Web/API/Console/assert\n" +
+      "console.assert(true, 'passing assert');\n" +
+      "console.assert(false, 'failing assert');\n"; // +
+    // "\n// psst. Open your console for logging!";
+    steps.push({
+      code: defaultCode,
+      name: 'default'
+    })
+  };
+
+  steps.forEach(step => {
+    step.session = ace.createEditSession(step.code, 'javascript');
+    step.session.setMode('ace/mode/javascript');
+  });
+
+  const resultsContainer = document.createElement('div');
+
+
+  if (steps.length > 1) {
+    const stepButtons = steps.map((step, index) => {
+      const button = document.createElement('button');
+      button.style = 'height:35px';
       const name = step.name ? step.name : 'step ' + index;
       button.innerHTML = name;
       // clear the results when tabs are switched
@@ -202,42 +355,45 @@ codeAlong.setup = async (steps, title) => {
       return button;
     });
 
-    if (steps.length > 0) {
-      const buttonsContainer = steps
-        .reduce((div, step) => {
-          div.appendChild(step.button);
-          return div;
-        }, document.createElement('div'));
-      stepsContainer.appendChild(buttonsContainer)
-    }
+    const buttonsContainer = steps
+      .reduce((div, step) => {
+        div.appendChild(step.button);
+        return div;
+      }, document.createElement('div'));
+    buttonsContainer.style = 'padding-bottom:1%';
+    stepsContainer.appendChild(buttonsContainer);
 
-    stepsContainer.appendChild(editorContainer);
+    steps[0].button.innerHTML = '---> ' + steps[0].name + ' <---';
+  }
 
-    steps[0].button.click()
+  stepsContainer.appendChild(editorContainer);
 
-    editor.setValue(steps[0].code);
+  editor.setSession(steps[0].session);
 
-    const evaluate = document.createElement('button');
-    evaluate.innerHTML = 'evaluate assertions';
-    evaluate.addEventListener('click', function evaluationHandler() {
-      resultsContainer.innerHTML = '';
-      const results = codeAlong.evaluate(editor.getValue());
-      // active.results = results;
-      resultsContainer.appendChild(results);
-    });
+  editor.setValue(steps[0].code);
 
-    const jsTutorButton = document.createElement('button');
-    jsTutorButton.innerHTML = 'open in JS Tutor';
-    jsTutorButton.onclick = () => {
-      const encodedJST = encodeURIComponent(editor.getValue());
-      const sanitizedJST = encodedJST
-        .replace(/\(/g, '%28').replace(/\)/g, '%29')
-        .replace(/%09/g, '%20%20');
-      const jsTutorURL = "http://www.pythontutor.com/live.html#code=" + sanitizedJST + "&cumulative=false&curInstr=2&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false";
-      window.open(jsTutorURL, '_blank');
-    };
+  const evaluate = document.createElement('button');
+  evaluate.innerHTML = 'evaluate code';
+  evaluate.addEventListener('click', function evaluationHandler() {
+    resultsContainer.innerHTML = '';
+    const results = codeAlong.evaluate(editor.getValue());
+    // active.results = results;
+    resultsContainer.appendChild(results);
+  });
 
-    {/* build parsonizer button
+  const jsTutorButton = document.createElement('button');
+  jsTutorButton.innerHTML = 'open in JS Tutor';
+  jsTutorButton.onclick = () => {
+    const encodedJST = encodeURIComponent(editor.getValue());
+    const sanitizedJST = encodedJST
+      .replace(/\(/g, '%28').replace(/\)/g, '%29')
+      .replace(/%09/g, '%20%20');
+    // const jsTutorURL = "http://www.pythontutor.com/live.html#code=" + sanitizedJST + "&cumulative=false&curInstr=2&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false";
+    const jsTutorURL = "http://www.pythontutor.com/javascript.html#code=" + sanitizedJST + "&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D";
+    window.open(jsTutorURL, '_blank');
+  };
+
+  {/* build parsonizer button
         const parsonizerButton = document.createElement('button');
         parsonizerButton.innerHTML = 'Parsonzier';
         parsonizerButton.onclick = () => {
@@ -250,44 +406,41 @@ codeAlong.setup = async (steps, title) => {
         }
       */}
 
-    const buttonDiv = document.createElement('div');
-    buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
-    buttonDiv.appendChild(jsTutorButton);
-    buttonDiv.appendChild(evaluate);
-    // buttonDiv.appendChild(parsonizerButton);
+  const buttonDiv = document.createElement('div');
+  buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
+  buttonDiv.appendChild(evaluate);
+  buttonDiv.appendChild(jsTutorButton);
+  // buttonDiv.appendChild(parsonizerButton);
 
 
-    resultsContainer.id = '\n-- assertions --\n';
+  resultsContainer.id = '\n-- assertions --\n';
 
 
-    const initialResult = document.createElement('pre');
-    initialResult.innerHTML = `
-Psst. open your console for logs and errors
-    `;
-    resultsContainer.appendChild(initialResult);
+  const initialResult = document.createElement('pre');
+  //     initialResult.innerHTML = `
+  // Psst. open your console for logs and errors
+  //     `;
+  resultsContainer.appendChild(initialResult);
 
-    const outputContainer = document.createElement('div');
-    outputContainer.style = 'height: 100vh; width: 40vw; border:solid 1px; padding-left:3%; padding-right:3%;';
-    if (typeof title === 'string') {
-      const titleEl = document.createElement('h3');
-      titleEl.innerHTML = title;
-      titleEl.style = 'text-align: center;';
-      outputContainer.appendChild(titleEl);
-    }
-    outputContainer.appendChild(buttonDiv);
-    outputContainer.appendChild(document.createElement('hr'));
-    outputContainer.appendChild(resultsContainer);
-
-
-    iframe.contentDocument.body.style = 'display:flex; flex-direction:row;';
-    iframe.contentDocument.body.appendChild(outputContainer);
-    iframe.contentDocument.body.appendChild(stepsContainer);
-
+  const outputContainer = document.createElement('div');
+  outputContainer.style = 'height: 100vh; width: 40vw; border:solid 1px; padding-left:3%; padding-right:3%;';
+  if (typeof title === 'string') {
+    const titleEl = document.createElement('h3');
+    titleEl.innerHTML = title;
+    titleEl.style = 'text-align: center;';
+    outputContainer.appendChild(titleEl);
   }
+  outputContainer.appendChild(buttonDiv);
+  outputContainer.appendChild(document.createElement('hr'));
+  outputContainer.appendChild(resultsContainer);
 
-  return iframe;
+
+  iframe.contentDocument.body.style = 'display:flex; flex-direction:row;';
+  iframe.contentDocument.body.appendChild(stepsContainer);
+  iframe.contentDocument.body.appendChild(outputContainer);
 
 }
+
 
 codeAlong.evaluate = (src) => {
   const resultsEl = document.createElement('ol');
@@ -320,13 +473,14 @@ codeAlong.evaluate = (src) => {
   }
 
   try {
-    // const toEval = editor.getValue();
-    const loopDetected = codeAlong.infiniteLoopDetector.wrap(src);
+    const loopDetected = codeAlong.haltingDetector.wrap(src);
     const toEval = '(function editor() {' + loopDetected + '})();';
     eval(toEval);
   } catch (err) {
     const errorEl = document.createElement('pre');
-    errorEl.style.color = "red";
+    err.name === 'HaltingError'
+      ? errorEl.style.color = "#ff6f3f"
+      : errorEl.style.color = "red";
     // errorEl.innerHTML = err.stack;
     errorEl.innerHTML = err.name + ': ' + err.message + '\n\n   (callstack is logged to the console)';
     resultsEl.appendChild(errorEl);
@@ -341,23 +495,35 @@ codeAlong.evaluate = (src) => {
 }
 
 
-codeAlong.infiniteLoopDetector = (() => {
+codeAlong.haltingDetector = (() => {
   // https://github.com/xieranmaya/infinite-loop-detector
   // refactored to work with iterations instead of time
 
-  // define an InfiniteLoopError class
-  function InfiniteLoopError(msg, type) {
-    Error.call(this, msg)
-    this.type = 'InfiniteLoopError'
-  }
 
-  function infiniteLoopDetector(iterations) {
-    if (iterations > 100) { // 非首次执行，此处可以优化，性能太低
-      throw new Error('Loop ran for over 100 iterations!', 'InfiniteLoopError')
+  // define an haltingError class
+  class HaltingError extends Error {
+    constructor(message) {
+      super(message);
+      this.name = "HaltingError";
     }
   }
 
-  infiniteLoopDetector.wrap = function (codeStr) {
+
+  haltingDetector = (iterations) => {
+    if (iterations > 1000) {
+      throw new HaltingError('Loop exceeded 1000 iterations');
+    }
+  }
+
+
+  // // not needed, browsers already catch excessive callstacks
+  // haltingDetector.recursionDetector = (recursions) => {
+  //   if (recursions > 1000) {
+  //     throw new HaltingError('Function exceeded 1000 internal calls');
+  //   }
+  // }
+
+  haltingDetector.wrap = function (codeStr) {
     if (typeof codeStr !== 'string') {
       throw new Error('Can only wrap code represented by string, not any other thing at the time! If you want to wrap a function, convert it to string first.')
     }
@@ -365,16 +531,19 @@ codeAlong.infiniteLoopDetector = (() => {
     // wraps in block to avoid redeclaring variables between attempts
     //  uses block instead of iife to preserve line number in error read-out
     //  and keep simpler callstack for students
-    return '{' + codeStr.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, function (loopHead) {
-      var id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
-      return `let __${id} = 0;${loopHead}codeAlong.infiniteLoopDetector(++__${id});`
-    }) + '\n}';
+    const loopChecked = codeStr.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, loopHead => {
+      const id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
+      return `let __${id} = 0;${loopHead}codeAlong.haltingDetector(++__${id});`
+    });
+    return '{' + loopChecked + '}';
+    // const recursionChecked = loopChecked.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, loopHead => {
+    //   const id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
+    //   return `let __${id} = 0;${loopHead}codeAlong.haltingDetector.recursionDetector(++__${id});`
+    // });
+    // return recursionChecked;
   }
 
-  infiniteLoopDetector.unwrap = function (codeStr) {
-    const deInsided = codeStr.replace(/codeAlong.infiniteLoopDetector\([0-9]*?\) = 0;/g, '');
-    return deInsided.replace(/let __\([0-9]*?\)/g, '');
-  }
+  haltingDetector.unwrap = function (codeStr) { }
 
-  return infiniteLoopDetector
-})()
+  return haltingDetector
+})();

@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "name": "calculator-refactor",
+      "live": true,
+      "endpoints": [
+        "development-strategy.md"
+      ],
+      "branches": [
+        "DOM",
+        "styles",
+        "listener",
+        "handler",
+        "logic"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "name": "using-user-input",
+      "live": true,
+      "endpoints": [
+        "1-fill-in-the-blanks",
+        "2-fix-the-bugs",
+        "3-from-spec",
+        "4-open-ended"
+      ]
+    },
+    {
+      "name": "FCC: Basic JavaScript",
+      "live": "https://freecodecamp.org/<user-name>",
+      "source": false
+    },
+    {
+      "name": "FCC: Debugging",
+      "live": "https://freecodecamp.org/<user-name>",
+      "source": false
+    },
+    {
+      "name": "FCC: Regular Expressions",
+      "live": "https://freecodecamp.org/<user-name>",
+      "source": false
+    }
+  ]
+}
