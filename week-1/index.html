@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>wk 1: Incremental Development</title>
+  <title>wk 3: Incremental Development</title>
 
   <script src='../embed-scripts/code-along.js'></script>
 
@@ -32,7 +32,6 @@
       bottom: 1em;
       left: 1em;
       font-size: 0.5em;
-      z-index: -1;
     }
   </style>
 </head>
@@ -41,110 +40,162 @@
 
 
   <div class="reveal">
-
     <div class='footer'>
       <code id="footer-text">ESC to overview</code>
       <br>
-      <a id='to-repo' style='visibility:hidden'
-        href="https://github.com/hackyourfuturebelgium/separation-of-concerns/tree/master/week-1" target="_blank">
-        <code>to module repo</code>
+      <a id='to-repo' style='visibility:hidden' href="https://github.com/hackyourfuturebelgium/separation-of-concerns"
+        target="_blank">
+        <code>module repository</code>
       </a>
     </div>
+
 
     <div class="slides">
 
       <section id='cover-slide'>
-        <h2>Separation of Concerns</h2>
+        <h3>Separation of Concerns</h3>
         <br>
-        <p>Week 1</p>
+        <h2>Week 1</h2>
+        <br>
+        <p>
+          hit "s" for speaker notes
+        </p>
+        <a href="https://github.com/hackyourfuturebelgium/separation-of-concerns/tree/master/week-1">
+          -- back to repo --
+        </a>
+      </section>
+
+      <section id='about-today'>
+        <h1>About Today</h1>
+        <br>
+        <br>
+        <p>Learning Objectives, Announcements, Installations</p>
+        <br>
+        <code>(~10 min)</code>
+      </section>
+      <section id="learning-objectives">
+        <section>
+          <h2>Learning Objectives</h2><br>
+          <br>
+          <br>
+          <p>
+            What can you expect to cover in class today?
+          </p>
+        </section>
+        <section>
+          <h3>Isolating JavaScript</h3>
+          <br>
+          <ul>
+            <li>Program Life-Cycle & Errors</li>
+            <li>Types, Values & Comparisons</li>
+            <li>Variables</li>
+            <li>Conditionals</li>
+            <li>Functions & Test Cases</li>
+            <li>Strings: Access & Methods</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Integrating JavaScript</h3>
+          <br>
+          <ul>
+            <li>Using JS from HTML files</li>
+            <li>Adding Event Listeners</li>
+            <li>Event Handlers</li>
+            <li>Reading Input from Forms</li>
+            <li>Writing results to the DOM</li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section id="installations">
+        <section>
+          <h2>Installations</h2>
+          <br>
+          <p>Extensions to write readable code.</p>
+        </section>
+        <section>
+          <h2>VSC Extensions</h2>
+          <br>
+          <ul>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target='_blank'>
+                ESLint</a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target='_blank'>
+                Prettier</a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
+                target='_blank'>
+                Code Spell-Checker
+              </a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
+                target='_blank'>
+                Bracket Pair Colorizer</a> (optional)
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section id='review'>
+        <h1>Review</h1>
+        <br>
+        <br>
+        <p>Any <code>ask-on-sunday</code> issues?</p>
+        <p>Any other Questions?</p>
+        <br>
+        <code>(~20 min)</code>
+      </section>
+
+      <section id='review'>
+        <h1>New Material</h1>
+        <br>
+        <br>
+        <p>An quick introduction to new concepts this week.</p>
+        <br>
+        <br>
+        <code>(~80 min)</code>
       </section>
 
       <!--
-
-        ...
-        readable code
-          use linter & prettifier
-          naming conventions
-        ...
+        new material (isolating JavaScript)
+          program life-cycle & errors
+          types, values, comparisons & casting
+          variables
+          conditionals
+          functions
+        break
+        working in steps
+          the steps
+            0 setup
+            1 dom
+            2 styles
+            3 listener
+            4 handler
+            5 logic
+          mirror-book example
+          mouse coordinates example
+        code-along
+          a site that takes a sentence and finds substrings. optionally set substring to uppercase or lowercase
+        homework launch
        -->
 
-      <!-- <section id='reversed'>
-        <script>
-          codeAlong({
-            title: 'user interactions: reversed',
-            container: 'reversed',
-            type: 'document',
-            source: './reversed.html'
-          })
-        </script>
-      </section> -->
-
-      <!-- <section id='infinite-tests'>
-        <script>
-          codeAlong({
-            title: 'Infinite Tests',
-            container: 'infinite-tests',
-            type: 'js',
-            source: [
-              {
-                name: "es5",
-                path: "./infinite/es5-recursion.js",
-              },
-              {
-                name: "es6",
-                path: "./infinite/es6-recursion.js",
-              },
-              {
-                name: "for",
-                path: "./infinite/for.js",
-              },
-              {
-                name: "while",
-                path: "./infinite/for.js",
-              },
-              {
-                name: "do while",
-                path: "./infinite/do-while.js",
-              },
-            ],
-          });
-        </script>
-      </section> -->
-
-      <section id='code-along-poc'>
-        <script>
-          codeAlong({
-            title: 'variable swap',
-            container: 'code-along-poc',
-            source: [
-              {
-                name: "0. setup",
-                path: "./value-swap/0-setup.js",
-              },
-              {
-                name: "1. store a's value for later",
-                path: "./value-swap/1-store-2.js",
-              },
-              {
-                name: "2. assign b's value to a",
-                path: "./value-swap/2-reassign-a.js",
-              },
-              {
-                name: '3. assign stored value to b',
-                path: "./value-swap/3-use-stored-value.js",
-              },
-            ],
-          });
-        </script>
-      </section>
-
-      <section id="thats-all">
-        <h2>Separation of Concerns</h2>
+      <section id='cover-slide'>
+        <h3>Separation of Concerns</h3>
         <br>
-        <p>Week 1</p>
+        <h2>Week 1</h2>
         <br>
+        <p>
+          hit "s" for speaker notes
+        </p>
+        <a href="https://github.com/hackyourfuturebelgium/separation-of-concerns/tree/master/week-1">
+          -- back to repo --
+        </a>
       </section>
-
 
     </div>
   </div>
@@ -159,7 +210,11 @@
       width: "100%",
       height: "100%",
       keyboard: {
-        // 27: function () {  }, // do something custom when ESC is pressed
+        67: function () { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+        66: function () { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+        46: function () { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+        8: function () { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+        68: function () { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
       },
       dependencies: [
         // { src: 'plugin/markdown/marked.js' },
@@ -176,8 +231,9 @@
     });
     Reveal.addEventListener('overviewhidden', function (event) {
       document.getElementById('footer-text').innerHTML = "ESC to overview";
-      document.getElementById('to-repo').style.visibility = 'visible';
+      document.getElementById('to-repo').style.visibility = 'hidden';
     });
+
 
 
   </script>

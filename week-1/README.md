@@ -1,5 +1,7 @@
 # Week 1
 
+Putting it all together.
+
 * [Prep Work](#prep-work)
 * [Lesson Plan](#lesson-plan)
 * [Assignments](#assignments)
@@ -22,7 +24,6 @@
 * [Using JS DevTools](https://www.youtube.com/watch?v=sjmyfwESv1g&list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB&index=5)
 * [Rules for writing JS](https://www.youtube.com/watch?v=FdlBtidhAnE&list=PL0eyrZgxdwhxNGMWROnaY35NLyEjTqcgB&index=6)
 * Start [learnjavascript.online](https://learnjavascript.online/) through __2. Strings__
-
 
 ---
 
