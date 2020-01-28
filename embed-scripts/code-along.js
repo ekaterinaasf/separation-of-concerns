@@ -144,7 +144,6 @@ codeAlong.setup = async (steps, config) => {
       iframe.contentDocument.head.appendChild(aceScript);
     });
 
-
     // async total side-effect
     if (config.type === 'document') {
       codeAlong.document(iframe, steps, config);
@@ -170,11 +169,13 @@ codeAlong.document = (iframe, steps, config) => {
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
+  // editor.setTheme('ace/theme/iplastic'); // lack of color outweighs yellow open/close
+  // editor.setTheme('ace/theme/dawn');
+  // editor.setTheme('ace/theme/eclipse');
   editor.setTheme('ace/theme/chrome');
   editor.setFontSize(12);
   editor.getSession().setMode('ace/mode/html');
   editor.getSession().setTabSize(2);
-
 
   if (steps.length === 0) {
     const defaultCode = "// https://developer.mozilla.org/en-US/docs/Web/API/Console/assert\n" +
@@ -290,17 +291,22 @@ codeAlong.document = (iframe, steps, config) => {
 }
 
 codeAlong.js = (iframe, steps, config) => {
-  console.log(config)
+
   const title = config.title;
 
   const stepsContainer = document.createElement('div');
 
   const editorContainer = document.createElement('div');
-  editorContainer.style = 'height:100vh;width:60vw;';
+  editorContainer.style = 'height:100vh;width:55vw;';
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
-  editor.setTheme('ace/theme/chrome');
+  // editor.setTheme('ace/theme/dawn');
+  // editor.setTheme('ace/theme/eclipse');
+  editor.setTheme('ace/theme/iplastic'); // weaker coloring, but open/close are highlighted bright yellow
+  // editor.setTheme('ace/theme/kuroir');
+  // editor.setTheme('ace/theme/tomorrow');
+  // editor.setTheme('ace/theme/xcode');
   editor.setFontSize(12);
   editor.getSession().setMode('ace/mode/javascript');
   editor.getSession().setTabSize(2);
@@ -330,7 +336,10 @@ codeAlong.js = (iframe, steps, config) => {
       const button = document.createElement('button');
       button.style = 'height:35px';
       const name = step.name ? step.name : 'step ' + index;
-      button.innerHTML = name;
+      // to preserve formatting in step title
+      const code = document.createElement('code');
+      code.innerHTML = name;
+      button.appendChild(code);
       // clear the results when tabs are switched
       //  avoid students changing code but not evaluating, switching tabs, then back and not remembering the results are out of date, then being confused by the wrong results.
       // step.results = document.createElement('div');
@@ -339,11 +348,11 @@ codeAlong.js = (iframe, steps, config) => {
         active = step;
         // console.clear();
         stepButtons.forEach(stepButton => {
-          stepButton.innerHTML = stepButton.innerHTML
-            .replace('---&gt; ', '')
-            .replace(' &lt;---', '');
+          stepButton.firstChild.innerHTML = stepButton.firstChild.innerHTML
+            .replace('&gt;&gt;&gt;   ', '')
+            .replace('   &lt;&lt;&lt;', '');
         })
-        button.innerHTML = '---> ' + button.innerHTML + ' <---';
+        button.firstChild.innerHTML = '>>>   ' + button.firstChild.innerHTML + '   <<<';
 
         editor.setSession(step.session);
 
@@ -363,7 +372,7 @@ codeAlong.js = (iframe, steps, config) => {
     buttonsContainer.style = 'padding-bottom:1%';
     stepsContainer.appendChild(buttonsContainer);
 
-    steps[0].button.innerHTML = '---> ' + steps[0].name + ' <---';
+    steps[0].button.firstChild.innerHTML = '>>>   ' + steps[0].name + '   <<<';
   }
 
   stepsContainer.appendChild(editorContainer);
@@ -423,7 +432,7 @@ codeAlong.js = (iframe, steps, config) => {
   resultsContainer.appendChild(initialResult);
 
   const outputContainer = document.createElement('div');
-  outputContainer.style = 'height: 100vh; width: 40vw; border:solid 1px; padding-left:3%; padding-right:3%;';
+  outputContainer.style = 'height: 100vh; width: 55vw; border:solid 1px;';
   if (typeof title === 'string') {
     const titleEl = document.createElement('h3');
     titleEl.innerHTML = title;
@@ -465,6 +474,7 @@ codeAlong.evaluate = (src) => {
       .replace(',', ', ');
 
     const newLi = document.createElement('li');
+    newLi.style = 'padding-top:1%;'
     newLi.appendChild(statusEl);
     newLi.appendChild(messages);
 
@@ -535,7 +545,7 @@ codeAlong.haltingDetector = (() => {
       const id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
       return `let __${id} = 0;${loopHead}codeAlong.haltingDetector(++__${id});`
     });
-    return '{' + loopChecked + '}';
+    return loopChecked;
     // const recursionChecked = loopChecked.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, loopHead => {
     //   const id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
     //   return `let __${id} = 0;${loopHead}codeAlong.haltingDetector.recursionDetector(++__${id});`

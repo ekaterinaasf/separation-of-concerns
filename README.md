@@ -57,6 +57,10 @@ Understanding & applying these principles will help with testing, development sc
 
 ### Programming Skills
 
+* Learning from Code
+  * Reading & understanding source code
+  * Making small, incremental experiments
+  * Copying & modifying others' code
 * Tracing Program Execution
   * Stepping through with tools like JS Tutor & Devtools debugger
   * Tracing values manually with pencil & paper
@@ -117,6 +121,10 @@ Understanding & applying these principles will help with testing, development sc
 
 ### Integrating JavaScript (study JS embedded in applications)
 
+* Document Life-Cycle
+  * `<head>`: Scripts & styles are loaded top to bottom, before the `<body>`
+  * `<body>`: Everything is executed/loaded top to bottom
+  * so what?  Any DOM script should be written/loaded _below_ the element it interacts with
 * JS & the DOM
   * Adding event listeners to DOM elements
   * Reading & Writing values from DOM elements

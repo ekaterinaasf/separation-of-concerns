@@ -1,0 +1,31 @@
+isolating js
+  program life-cycle
+    - no code-alongs, just a pytut link
+  errors
+    - use errors to introduce the life-cycle stages?
+    - the embedded code-along is helpful
+      asserts before a syntax error won't be asserted
+  primitive types & values
+    - console.assert typeofs
+  strict comparison
+  type casting
+  variables
+  functions
+  block scope
+  conditionals
+
+integrating js
+  introduce the roles
+  show two projects being built
+  show two fully separated projects
+  do a code-along
+
+
+isolating rethink
+  program life-cycle & errors
+    explicitly teach how to read the callstack
+    firefox doesn't log callstack, this is a live-server thing?
+  true, false & asserting
+    have them see that only failing asserts log to the console
+  ===, !==, &&, ||, !
+  primitive-types-values

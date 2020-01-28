@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>wk 3: Incremental Development</title>
+  <title>wk 1: Separation of Concerns</title>
 
   <script src='../embed-scripts/code-along.js'></script>
 
@@ -65,6 +65,206 @@
         </a>
       </section>
 
+      <!-- <section id='asserting-true-and-false'>
+         <section>
+          <h2>Asserting true and false</h2>
+          <br>
+          <p>The base unit of programming</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+        <section id='assert-true-false'>
+          <script>
+            codeAlong({
+              title: 'Asserting true & false',
+              container: 'assert-true-false',
+              type: 'js',
+              source: [
+                {
+                  name: 'console.assert?',
+                  path: '../javascript-basics/1-assert-true-and-false/index.js'
+                },
+              ]
+            })
+          </script>
+        </section>-->
+
+      <section id='comparisons-and-logic'>
+        <section>
+          <h2>Comparisons & Logic</h2>
+          <br>
+          <p>The base units of programming</p>
+        </section>
+        <section id='console-assert'>
+          <script>
+            codeAlong({
+              title: 'console.assert',
+              container: 'console-assert',
+              type: 'js',
+              source: [
+                '../javascript-basics/1-comparisons-and-logic/console-assert.js'
+              ]
+            })
+          </script>
+        </section>
+        <section id='comparisons'>
+          <script>
+            codeAlong({
+              title: 'Comparisons',
+              container: 'comparisons',
+              type: 'js',
+              source: [
+                {
+                  name: '===, !==',
+                  path: '../javascript-basics/1-comparisons-and-logic/strict-comparisons.js'
+                },
+              ]
+            })
+          </script>
+        </section>
+        <section id='logical-operators'>
+          <script>
+            codeAlong({
+              title: 'Logical Operators',
+              container: 'logical-operators',
+              type: 'js',
+              source: [
+                {
+                  name: '&&, ||, !',
+                  path: '../javascript-basics/1-comparisons-and-logic/logical-operators.js'
+                },
+              ]
+            })
+          </script>
+        </section>
+        <section id='order-of-operations'>
+          <script>
+            codeAlong({
+              title: 'Order of Operations',
+              container: 'order-of-operations',
+              type: 'js',
+              source: [
+                {
+                  name: 'Order of Operations',
+                  path: '../javascript-basics/1-comparisons-and-logic/order-of-operations.js'
+                },
+              ]
+            })
+          </script>
+        </section>
+        <section id='pass-the-tests'>
+          <script>
+            codeAlong({
+              title: 'Pass the Tests!',
+              container: 'pass-the-tests',
+              type: 'js',
+              source: [
+                '../javascript-basics/1-comparisons-and-logic/pass-the-tests.js'
+              ]
+            })
+          </script>
+        </section>
+      </section>
+      <!--
+      <section id='primitive-types-and-values'>
+        <section>
+          <h2>Primitive Types & Values</h2>
+          <br>
+          <p>The base unit of programming</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+        <section id='typeof'>
+          <script>
+            codeAlong({
+              title: 'typeof',
+              container: 'typeof',
+              type: 'js',
+              source: [
+                {
+                  name: 'All primitives have a type',
+                  path: 'isolating-js/primitive-types-and-values/typeof.js'
+                },
+                {
+                  name: 'All types names are strings',
+                  path: 'isolating-js/primitive-types-and-values/typeof-types.js'
+                },
+                {
+                  name: 'Figure this out!',
+                  path: 'isolating-js/primitive-types-and-values/typeof-figure-this-out.js'
+                }
+              ]
+            })
+          </script>
+        </section>
+        <section id='booleans'>
+          <script>
+            codeAlong({
+              title: 'Booleans',
+              container: 'booleans',
+              type: 'js',
+              source: [
+                {
+                  name: 'There are only two "boolean" values',
+                  path: 'isolating-js/primitive-types-and-values/booleans.js'
+                },
+                {
+                  name: 'console.assert',
+                  path: 'isolating-js/primitive-types-and-values/booleans-console-assert.js'
+                }
+              ]
+            })
+          </script>
+        </section>
+        <section id='strings'>
+          <script>
+            codeAlong({
+              title: 'Strings',
+              container: 'strings',
+              type: 'js',
+              source: [
+                {
+                  name: 'Anything in quotes is a string',
+                  path: 'isolating-js/primitive-types-and-values/strings.js'
+                },
+                {
+                  name: 'Quotes within Quotes',
+                  path: 'isolating-js/primitive-types-and-values/strings-quotes-between-quotes.js'
+                }
+              ]
+            })
+          </script>
+        </section>
+        <section id='numbers'>
+          <script>
+            codeAlong({
+              title: 'Numbers',
+              container: 'numbers',
+              type: 'js',
+              source: [
+                {
+                  name: 'There are many kinds of numbers',
+                  path: 'isolating-js/primitive-types-and-values/numbers.js'
+                }
+              ]
+            })
+          </script>
+        </section>
+      </section>
+
+ -->
+
+
       <section id='about-today'>
         <h1>About Today</h1>
         <br>
@@ -89,6 +289,7 @@
             <li>Program Life-Cycle & Errors</li>
             <li>Types, Values & Comparisons</li>
             <li>Variables</li>
+            <li>Block Scope</li>
             <li>Conditionals</li>
             <li>Functions & Test Cases</li>
             <li>Strings: Access & Methods</li>
@@ -137,6 +338,9 @@
                 target='_blank'>
                 Bracket Pair Colorizer</a> (optional)
             </li>
+            <li><a href=" https://code.visualstudio.com/docs/editor/emmet" tar get='_blank'>
+                Emmet</a> (optional)
+            </li>
           </ul>
         </section>
       </section>
@@ -161,14 +365,197 @@
         <code>(~80 min)</code>
       </section>
 
+      <section id='what-is-javascript'>
+        <section>
+          <h2>What is JavaScript?</h2>
+          <br>
+          <p>It's a programming language, but what's that?.</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='program-life-cycle'>
+        <section>
+          <h2>Program Life-Cycle</h2>
+          <br>
+          <p>Source -> Creation -> Execution</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='errors'>
+        <section>
+          <h2>Errors</h2>
+          <br>
+          <p>When something goes wrong</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='strict-comparison'>
+        <section>
+          <h2>Strict Comparison</h2>
+          <br>
+          <p>Understanding type and value</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='type-casting'>
+        <section>
+          <h2>Type Casting</h2>
+          <br>
+          <p>Rules for converting types</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+
+      <section id='variables'>
+        <section>
+          <h2>Variables</h2>
+          <br>
+          <p>Store values for later</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+        <!-- <section id='variable-swap'>
+            <script>
+              codeAlong({
+                title: 'Variable Swap',
+                container: 'variable-swap',
+                type: 'js',
+                source: [
+                  {
+                    name: '0. Set-Up',
+                    path: 'isolating-js/variable-swap/0-setup.js'
+                  }, {
+                    name: '1. Store 2',
+                    path: 'isolating-js/variable-swap/1-store-2.js'
+                  }, {
+                    name: '2. Reassign a',
+                    path: 'isolating-js/variable-swap/2-reassign-a.js'
+                  }, {
+                    name: '3. Use Stored Value',
+                    path: 'isolating-js/variable-swap/3-use-stored-value.js'
+                  }
+                ]
+              })
+            </script>
+          </section> -->
+      </section>
+
+      <section id='functions'>
+        <section>
+          <h2>Functions & Test Cases</h2>
+          <br>
+          <p>Same instructions, different values</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='block-scope'>
+        <section>
+          <h2>Block Scope</h2>
+          <br>
+          <p>...</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='conditionals'>
+        <section>
+          <h2>Conditionals</h2>
+          <br>
+          <p>Alternate execution paths</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+        <!--
+                      example with no variables
+                        fixed execution path
+                      example with variables
+                        variable execution path
+                    -->
+      </section>
+
+      <section id='all-together'>
+        <section>
+          <h2>All Together</h2>
+          <br>
+          <p>Let's pass some tests!</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='review'>
+        <h1>Break!</h1>
+        <br>
+        <code>(~20 min)</code>
+      </section>
+
       <!--
-        new material (isolating JavaScript)
-          program life-cycle & errors
-          types, values, comparisons & casting
-          variables
-          conditionals
-          functions
-        break
+        - mouse & mirrorbook
+          two project-based case-studies?
+          stepped, then separated?
         working in steps
           the steps
             0 setup
@@ -179,10 +566,14 @@
             5 logic
           mirror-book example
           mouse coordinates example
+        inspecting sources from devtools
+          live examples from in directory, link to gh-pages & source
         code-along
           a site that takes a sentence and finds substrings. optionally set substring to uppercase or lowercase
         homework launch
        -->
+
+
 
       <section id='cover-slide'>
         <h3>Separation of Concerns</h3>
