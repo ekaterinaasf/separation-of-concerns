@@ -12,6 +12,6 @@ console.assert(false || true, 'false || true');
 console.assert(false || false, 'false || false');
 
 
-// not: ! reverses the truthiness of a value
+// negation: ! reverses the truthiness of a value
 console.assert(!true, '!true');
 console.assert(!false, '!false');

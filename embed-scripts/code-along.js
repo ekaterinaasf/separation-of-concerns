@@ -305,9 +305,10 @@ codeAlong.js = (iframe, steps, config) => {
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
+  editor.setTheme('ace/theme/chrome');
   // editor.setTheme('ace/theme/dawn');
   // editor.setTheme('ace/theme/eclipse');
-  editor.setTheme('ace/theme/iplastic'); // weaker coloring, but open/close are highlighted bright yellow
+  // editor.setTheme('ace/theme/iplastic'); // weaker coloring, but open/close are highlighted bright yellow
   // editor.setTheme('ace/theme/kuroir');
   // editor.setTheme('ace/theme/tomorrow');
   // editor.setTheme('ace/theme/xcode');
