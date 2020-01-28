@@ -22,10 +22,20 @@ integrating js
 
 
 isolating rethink
-  program life-cycle & errors
+  z. how to use these exercises
+  0. program life-cycle & errors
     explicitly teach how to read the callstack
     firefox doesn't log callstack, this is a live-server thing?
-  true, false & asserting
-    have them see that only failing asserts log to the console
-  ===, !==, &&, ||, !
-  primitive-types-values
+  1. comparisons and logic
+    asserting
+    logical operators
+    strict comparisons
+    order of operations
+    pass the tests
+  2. primitive-types-values
+    typeof, type names are strings, challenges
+    strings, quotes in quotes
+    numbers
+    boolean, undefined & null
+    pass the tests
+

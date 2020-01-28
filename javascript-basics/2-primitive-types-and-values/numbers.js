@@ -1,6 +1,5 @@
 // There are many kinds of numbers in JS
 // instead of guessing or remembering them all, use typeof!
-
 console.assert(
   (typeof 1) === "number",
   "positive numbers are a 'number'"
@@ -27,5 +26,10 @@ console.assert(
 );
 console.assert(
   (typeof NaN) === "number",
-  "NaN (not a number) is a ... 'number'?"
+  "NaN (not a number) is a 'number' ... ?"
 );
+
+// NaN is a strange and special value in JavaScript
+//  it is the only value that does not compare to itself
+console.assert(NaN === NaN, 'NaN === NaN');
+console.assert(NaN !== NaN, 'NaN !== NaN');

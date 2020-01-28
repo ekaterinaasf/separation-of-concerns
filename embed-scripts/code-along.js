@@ -197,6 +197,7 @@ codeAlong.document = (iframe, steps, config) => {
     const stepButtons = steps.map((step, index) => {
       const button = document.createElement('button');
       button.style.height = '30px'; // provisoire
+      button.style.background = '';
       const name = step.name ? step.name : 'step ' + index;
       button.innerHTML = name;
       // clear the results when tabs are switched
@@ -207,11 +208,13 @@ codeAlong.document = (iframe, steps, config) => {
         active = step;
         // console.clear();
         stepButtons.forEach(stepButton => {
-          stepButton.innerHTML = stepButton.innerHTML
-            .replace('===&gt; ', '')
-            .replace(' &lt;===', '');
+          // stepButton.innerHTML = stepButton.innerHTML
+          //   .replace('===&gt; ', '')
+          //   .replace(' &lt;===', '');
+          stepButton.style.background = '';
         })
-        button.innerHTML = '===> ' + button.innerHTML + ' <===';
+        // button.innerHTML = '===> ' + button.innerHTML + ' <===';
+        button.style.background = 'darkgrey';
 
         editor.setSession(step.session);
         outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(editor.getValue());
@@ -228,7 +231,8 @@ codeAlong.document = (iframe, steps, config) => {
       }, document.createElement('div'));
     stepsContainer.appendChild(buttonsContainer);
 
-    steps[0].button.innerHTML = '===> ' + steps[0].name + ' <===';
+    // steps[0].button.innerHTML = '===> ' + steps[0].name + ' <===';
+    steps[0].button.style.background = 'darkgrey';
   }
 
   stepsContainer.appendChild(editorContainer);
@@ -334,7 +338,7 @@ codeAlong.js = (iframe, steps, config) => {
   if (steps.length > 1) {
     const stepButtons = steps.map((step, index) => {
       const button = document.createElement('button');
-      button.style = 'height:35px';
+      button.style = 'height:35px;';
       const name = step.name ? step.name : 'step ' + index;
       // to preserve formatting in step title
       const code = document.createElement('code');
@@ -348,11 +352,13 @@ codeAlong.js = (iframe, steps, config) => {
         active = step;
         // console.clear();
         stepButtons.forEach(stepButton => {
-          stepButton.firstChild.innerHTML = stepButton.firstChild.innerHTML
-            .replace('&gt;&gt;&gt;   ', '')
-            .replace('   &lt;&lt;&lt;', '');
+          // stepButton.firstChild.innerHTML = stepButton.firstChild.innerHTML
+          //   .replace('==&gt; ', '')
+          //   .replace(' &lt;==', '');
+          stepButton.style.background = '';
         })
-        button.firstChild.innerHTML = '>>>   ' + button.firstChild.innerHTML + '   <<<';
+        // button.firstChild.innerHTML = '==> ' + button.firstChild.innerHTML + ' <==';
+        button.style.background = 'darkgrey';
 
         editor.setSession(step.session);
 
@@ -372,7 +378,8 @@ codeAlong.js = (iframe, steps, config) => {
     buttonsContainer.style = 'padding-bottom:1%';
     stepsContainer.appendChild(buttonsContainer);
 
-    steps[0].button.firstChild.innerHTML = '>>>   ' + steps[0].name + '   <<<';
+    // steps[0].button.firstChild.innerHTML = '==> ' + steps[0].name + ' <==';
+    steps[0].button.style.background = 'darkgrey';
   }
 
   stepsContainer.appendChild(editorContainer);
