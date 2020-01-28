@@ -125,8 +125,8 @@ codeAlong.setup = async (steps, config) => {
   const result = {};
 
   const iframe = document.createElement('iframe');
-  iframe.style = 'height:90vh;width:100%;overflow:hidden;background-color:white;';
-  // iframe.setAttribute('scrolling', 'no');
+  iframe.style = 'height:93vh;width:100%;overflow:hidden;background-color:white;';
+  iframe.setAttribute('scrolling', 'no');
   result.iframe = iframe;
 
 
@@ -165,7 +165,7 @@ codeAlong.document = (iframe, steps, config) => {
   const stepsContainer = document.createElement('div');
 
   const editorContainer = document.createElement('div');
-  editorContainer.style = 'height:100vh;width:55vw;';
+  editorContainer.style = 'height:93%;width:55vw;';
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
