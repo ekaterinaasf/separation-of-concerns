@@ -65,11 +65,11 @@
         </a>
       </section>
 
-      <!-- <section id='comparisons-and-logic'>
+      <section id='comparisons-and-logic'>
         <section>
-          <h2>Comparisons & Logic</h2>
+          <h2>Asserting & Comparisons</h2>
           <br>
-          <p>The base units of programming</p>
+          <p>the basis of testing</p>
         </section>
         <section>
           <h3>...</h3>
@@ -81,68 +81,21 @@
         <section id='console-assert'>
           <script>
             codeAlong({
-              title: 'console.assert',
+              title: 'Asserting & Comparisons',
               container: 'console-assert',
               type: 'js',
               source: [
-                '../javascript-basics/1-comparisons-and-logic/console-assert.js'
-              ]
-            })
-          </script>
-        </section>
-        <section id='strict-comparisons'>
-          <script>
-            codeAlong({
-              title: 'Strict Comparisons',
-              container: 'strict-comparisons',
-              type: 'js',
-              source: [
+                {
+                  name: 'console.assert',
+                  path: '../javascript-basics/1-asserting-and-comparisons/console-assert.js'
+                },
                 {
                   name: '===, !==',
-                  path: '../javascript-basics/1-comparisons-and-logic/strict-comparisons.js'
+                  path: '../javascript-basics/1-asserting-and-comparisons/strict-comparisons.js'
+                }, {
+                  name: 'Pass the Tests!',
+                  path: '../javascript-basics/1-asserting-and-comparisons/pass-the-tests.js'
                 },
-              ]
-            })
-          </script>
-        </section>
-        <section id='logical-operators'>
-          <script>
-            codeAlong({
-              title: 'Logical Operators',
-              container: 'logical-operators',
-              type: 'js',
-              source: [
-                {
-                  name: '&&, ||, !',
-                  path: '../javascript-basics/1-comparisons-and-logic/logical-operators.js'
-                },
-              ]
-            })
-          </script>
-        </section>
-        <section id='order-of-operations'>
-          <script>
-            codeAlong({
-              title: 'Order of Operations',
-              container: 'order-of-operations',
-              type: 'js',
-              source: [
-                {
-                  name: 'Order of Operations',
-                  path: '../javascript-basics/1-comparisons-and-logic/order-of-operations.js'
-                },
-              ]
-            })
-          </script>
-        </section>
-        <section id='pass-the-tests-comparisons-and-logic'>
-          <script>
-            codeAlong({
-              title: 'Pass the Tests!',
-              container: 'pass-the-tests-comparisons-and-logic',
-              type: 'js',
-              source: [
-                '../javascript-basics/1-comparisons-and-logic/pass-the-tests.js'
               ]
             })
           </script>
@@ -193,9 +146,9 @@
                   path: '../javascript-basics/2-primitive-types-and-values/strings.js'
                 },
                 {
-                  name: 'Quotes within Quotes',
+                  name: 'Strings: Quotes within Quotes',
                   path: '../javascript-basics/2-primitive-types-and-values/strings-quotes-between-quotes.js'
-                }
+                },
               ]
             })
           </script>
@@ -245,7 +198,7 @@
             })
           </script>
         </section>
-      </section> -->
+      </section>
 
       <section id='variables'>
         <section>
@@ -358,7 +311,104 @@
         </section>
       </section>
 
+      <section id='functions'>
+        <section>
+          <h2>Functions & Test Cases</h2>
+          <br>
+          <p>Same instructions, different values</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+        <section id='functions-101'>
+          <script>
+            codeAlong({
+              container: 'functions-101',
+              title: 'Functions 101',
+              type: 'js',
+              source: [
+                {
+                  name: 'Declaration vs. Assignment',
+                  path: '../javascript-basics/4-functions-and-test-cases/101/declaration-vs-execution.js'
+                },
+                {
+                  name: 'Parameters & Arguments',
+                  path: '../javascript-basics/4-functions-and-test-cases/101/parameters-and-arguments.js'
+                },
+                {
+                  name: 'Scope',
+                  path: '../javascript-basics/4-functions-and-test-cases/101/scope.js'
+                },
+                {
+                  name: 'Return Values',
+                  path: '../javascript-basics/4-functions-and-test-cases/101/return-values.js'
+                },
+                {
+                  name: 'Errors',
+                  path: '../javascript-basics/4-functions-and-test-cases/101/errors.js'
+                },
+              ]
+            });
+          </script>
+        </section>
+        <!-- <section id='tracing-execution'>
+          <script>
+            codeAlong({
+              container: 'tracing-execution',
+              title: 'Tracing Execution',
+              type: 'js',
+              source: [
+              ]
+            });
+          </script>
+        </section> -->
+        <section id='test-cases'>
+          <script>
+            codeAlong({
+              container: 'test-cases',
+              title: 'Testing',
+              type: 'js',
+              source: [
+                {
+                  name: 'Test Cases',
+                  path: '../javascript-basics/4-functions-and-test-cases/testing/test-cases.js'
+                },
+                {
+                  name: 'Behavior vs. implementation',
+                  path: '../javascript-basics/4-functions-and-test-cases/testing/behavior-vs-implementation.js'
+                },
+                {
+                  name: 'Pure Functions',
+                  path: '../javascript-basics/4-functions-and-test-cases/testing/pure-functions.js'
+                },
+                {
+                  name: 'Impure Functions',
+                  path: '../javascript-basics/4-functions-and-test-cases/testing/impure-functions.js'
+                },
+              ]
+            });
+          </script>
+        </section>
+      </section>
 
+      <section id='type-casting'>
+        <section>
+          <h2>Type Casting</h2>
+          <br>
+          <p>Rules for converting types</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
 
       <section id='about-today'>
         <h1>About Today</h1>
@@ -387,7 +437,6 @@
             <li>Block Scope</li>
             <li>Conditionals</li>
             <li>Functions & Test Cases</li>
-            <li>Strings: Charecter Access & Methods</li>
           </ul>
         </section>
         <section>
@@ -398,6 +447,7 @@
             <li>Adding Event Listeners</li>
             <li>Writing Event Handlers</li>
             <li>Reading Input From Form Events</li>
+            <li>String Manipulation</li>
             <li>Writing results to the DOM</li>
           </ul>
         </section>
@@ -475,171 +525,6 @@
         </section>
       </section>
 
-      <section id='program-life-cycle'>
-        <section>
-          <h2>Program Life-Cycle</h2>
-          <br>
-          <p>Source -> Creation -> Execution</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='errors'>
-        <section>
-          <h2>Errors</h2>
-          <br>
-          <p>When something goes wrong</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='strict-comparison'>
-        <section>
-          <h2>Strict Comparison</h2>
-          <br>
-          <p>Understanding type and value</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='type-casting'>
-        <section>
-          <h2>Type Casting</h2>
-          <br>
-          <p>Rules for converting types</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-
-      <section id='variables'>
-        <section>
-          <h2>Variables</h2>
-          <br>
-          <p>Store values for later</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-        <!-- <section id='variable-swap'>
-            <script>
-              codeAlong({
-                title: 'Variable Swap',
-                container: 'variable-swap',
-                type: 'js',
-                source: [
-                  {
-                    name: '0. Set-Up',
-                    path: 'isolating-js/variable-swap/0-setup.js'
-                  }, {
-                    name: '1. Store 2',
-                    path: 'isolating-js/variable-swap/1-store-2.js'
-                  }, {
-                    name: '2. Reassign a',
-                    path: 'isolating-js/variable-swap/2-reassign-a.js'
-                  }, {
-                    name: '3. Use Stored Value',
-                    path: 'isolating-js/variable-swap/3-use-stored-value.js'
-                  }
-                ]
-              })
-            </script>
-          </section> -->
-      </section>
-
-      <section id='functions'>
-        <section>
-          <h2>Functions & Test Cases</h2>
-          <br>
-          <p>Same instructions, different values</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='block-scope'>
-        <section>
-          <h2>Block Scope</h2>
-          <br>
-          <p>...</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='conditionals'>
-        <section>
-          <h2>Conditionals</h2>
-          <br>
-          <p>Alternate execution paths</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-        <!--
-                      example with no variables
-                        fixed execution path
-                      example with variables
-                        variable execution path
-                    -->
-      </section>
-
-      <section id='all-together'>
-        <section>
-          <h2>All Together</h2>
-          <br>
-          <p>Let's pass some tests!</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
 
       <section id='review'>
         <h1>Break!</h1>

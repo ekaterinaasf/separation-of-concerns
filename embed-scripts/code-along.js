@@ -490,18 +490,36 @@ codeAlong.evaluate = (src) => {
 
   }
 
+  const renderError = (err) => {
+    const errorEl = document.createElement('pre');
+    errorEl.style.color = "red";
+    errorEl.innerHTML = err.name + ': ' + err.message + '\n\n   callstack is logged to the console';
+    return errorEl;
+  }
+  const renderHaltingWarning = (err) => {
+    const warningEl = document.createElement('pre');
+    warningEl.style.color = "#ff6f3f";
+    warningEl.innerHTML = 'Warning: ' + err.message + '\n\n   callstack is logged to the console';
+    return warningEl;
+  }
+  const renderPhase = didExecute => {
+    const phaseEl = document.createElement('pre');
+    const phase = didExecute ? 'Execution Phase' : "Creation Phase"
+    phaseEl.innerHTML = '   Caught during ' + phase;
+    return phaseEl;
+  }
+
+  let didExecute = false;
   try {
     const loopDetected = codeAlong.haltingDetector.wrap(src);
-    const toEval = '(function editor() {' + loopDetected + '})();';
+    const toEval = '(function editor() {didExecute = true;' + loopDetected + '})();';
     eval(toEval);
   } catch (err) {
-    const errorEl = document.createElement('pre');
-    err.name === 'HaltingError'
-      ? errorEl.style.color = "#ff6f3f"
-      : errorEl.style.color = "red";
-    // errorEl.innerHTML = err.stack;
-    errorEl.innerHTML = err.name + ': ' + err.message + '\n\n   (callstack is logged to the console)';
-    resultsEl.appendChild(errorEl);
+    const errOrWarning = err.name === 'HaltingError'
+      ? renderHaltingWarning(err)
+      : renderError(err);
+    resultsEl.appendChild(errOrWarning);
+    resultsEl.appendChild(renderPhase(didExecute));
     console.error(err);
   }
 

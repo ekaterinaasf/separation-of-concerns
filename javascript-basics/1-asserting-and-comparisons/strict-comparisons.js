@@ -18,3 +18,9 @@ console.assert(false !== true, 'false !== true');
 // if they ARE the same, it evaluates to false
 console.assert(true !== true, 'true !== true');
 console.assert(false !== false, 'false !== false');
+
+// multiple comparisons are evaluated left to right
+console.assert(false === false === true, 'false === false === true');
+console.assert(false === true === true, 'false === true === true');
+console.assert(false !== true === true, 'false !== true === true');
+console.assert(false === false !== false, 'false === false !== false');
