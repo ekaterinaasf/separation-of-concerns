@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="../reveal.js/css/reveal.css">
   <link rel="stylesheet" href="../reveal.js/css/theme/night.css">
 
+  <script src="../embed-scripts/prettier/standalone.js"></script>
+  <script src="../embed-scripts/prettier/parser-babylon.js"></script>
+
+  <script src="../embed-scripts/beautify.js"></script>
+
   <!-- Theme used for syntax highlighting of code -->
   <!-- <link rel="stylesheet" href="./reveal.js/lib/css/monokai.css"> -->
 
@@ -65,7 +70,127 @@
         </a>
       </section>
 
-      <section id='comparisons-and-logic'>
+
+      <section id='about-today'>
+        <h1>About Today</h1>
+        <br>
+        <br>
+        <p>Learning Objectives, Announcements, Installations</p>
+        <br>
+        <code>(~10 min)</code>
+      </section>
+      <section id="learning-objectives">
+        <section>
+          <h2>Learning Objectives</h2><br>
+          <br>
+          <br>
+          <p>
+            What can you expect to cover in class today?
+          </p>
+        </section>
+        <section>
+          <h3>Isolating JavaScript</h3>
+          <br>
+          <ul>
+            <li>Program Life-Cycle & Errors</li>
+            <li>Types, Values & Comparisons</li>
+            <li>Variables</li>
+            <li>Block Scope</li>
+            <li>Conditionals</li>
+            <li>Functions & Test Cases</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Integrating JavaScript</h3>
+          <br>
+          <ul>
+            <li>Using JS from HTML files</li>
+            <li>Adding Event Listeners</li>
+            <li>Writing Event Handlers</li>
+            <li>Reading Input From Form Events</li>
+            <li>String Manipulation</li>
+            <li>Writing results to the DOM</li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section id="installations">
+        <section>
+          <h2>Installations</h2>
+          <br>
+          <p>Extensions to write readable code.</p>
+        </section>
+        <section>
+          <h2>VSC Extensions</h2>
+          <br>
+          <ul>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target='_blank'>
+                ESLint</a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target='_blank'>
+                Prettier</a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
+                target='_blank'>
+                Code Spell-Checker
+              </a>
+            </li>
+            <li>
+              <a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
+                target='_blank'>
+                Bracket Pair Colorizer</a> (optional)
+            </li>
+            <li><a href=" https://code.visualstudio.com/docs/editor/emmet" tar get='_blank'>
+                Emmet</a> (optional)
+            </li>
+          </ul>
+        </section>
+      </section>
+
+      <section id='review'>
+        <h1>Review</h1>
+        <br>
+        <br>
+        <p>Any <code>ask-on-sunday</code> issues?</p>
+        <p>Any other Questions?</p>
+        <br>
+        <code>(~20 min)</code>
+      </section>
+
+      <section id='review'>
+        <h1>New Material</h1>
+        <br>
+        <br>
+        <p>An quick introduction to new concepts this week.</p>
+        <br>
+        <br>
+        <code>(~80 min)</code>
+      </section>
+
+      <section id='what-is-javascript'>
+        <section>
+          <h2>What is JavaScript?</h2>
+          <br>
+          <p>It's a programming language, but what's that?.</p>
+        </section>
+        <section>
+          <h3>...</h3>
+          <br>
+          <p>
+            ...
+          </p>
+        </section>
+      </section>
+
+      <section id='getting-started'></section>
+
+      <section id='life-cycle-and-errors'></section>
+
+      <section id='asserting-and-comparisons'>
         <section>
           <h2>Asserting & Comparisons</h2>
           <br>
@@ -332,7 +457,7 @@
               type: 'js',
               source: [
                 {
-                  name: 'Declaration vs. Assignment',
+                  name: 'Declaration vs. Execution',
                   path: '../javascript-basics/4-functions-and-test-cases/101/declaration-vs-execution.js'
                 },
                 {
@@ -355,17 +480,29 @@
             });
           </script>
         </section>
-        <!-- <section id='tracing-execution'>
+        <section id='tracing-function-execution'>
           <script>
             codeAlong({
-              container: 'tracing-execution',
-              title: 'Tracing Execution',
+              container: 'tracing-function-execution',
+              title: 'Tracing Function Execution',
               type: 'js',
               source: [
+                {
+                  name: 'How to Trace Execution',
+                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/how-to-trace-functions.js'
+                },
+                {
+                  name: 'Examples to Study',
+                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/examples-to-study.js'
+                },
+                {
+                  name: 'Pass Some Tests!',
+                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/pass-some-tests.js'
+                },
               ]
             });
           </script>
-        </section> -->
+        </section>
         <section id='test-cases'>
           <script>
             codeAlong({
@@ -393,135 +530,32 @@
             });
           </script>
         </section>
-      </section>
-
-      <section id='type-casting'>
-        <section>
-          <h2>Type Casting</h2>
-          <br>
-          <p>Rules for converting types</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
-        </section>
-      </section>
-
-      <section id='about-today'>
-        <h1>About Today</h1>
-        <br>
-        <br>
-        <p>Learning Objectives, Announcements, Installations</p>
-        <br>
-        <code>(~10 min)</code>
-      </section>
-      <section id="learning-objectives">
-        <section>
-          <h2>Learning Objectives</h2><br>
-          <br>
-          <br>
-          <p>
-            What can you expect to cover in class today?
-          </p>
-        </section>
-        <section>
-          <h3>Isolating JavaScript</h3>
-          <br>
-          <ul>
-            <li>Program Life-Cycle & Errors</li>
-            <li>Types, Values & Comparisons</li>
-            <li>Variables</li>
-            <li>Block Scope</li>
-            <li>Conditionals</li>
-            <li>Functions & Test Cases</li>
-          </ul>
-        </section>
-        <section>
-          <h3>Integrating JavaScript</h3>
-          <br>
-          <ul>
-            <li>Using JS from HTML files</li>
-            <li>Adding Event Listeners</li>
-            <li>Writing Event Handlers</li>
-            <li>Reading Input From Form Events</li>
-            <li>String Manipulation</li>
-            <li>Writing results to the DOM</li>
-          </ul>
-        </section>
-      </section>
-
-
-      <section id="installations">
-        <section>
-          <h2>Installations</h2>
-          <br>
-          <p>Extensions to write readable code.</p>
-        </section>
-        <section>
-          <h2>VSC Extensions</h2>
-          <br>
-          <ul>
-            <li>
-              <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target='_blank'>
-                ESLint</a>
-            </li>
-            <li>
-              <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target='_blank'>
-                Prettier</a>
-            </li>
-            <li>
-              <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker"
-                target='_blank'>
-                Code Spell-Checker
-              </a>
-            </li>
-            <li>
-              <a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer"
-                target='_blank'>
-                Bracket Pair Colorizer</a> (optional)
-            </li>
-            <li><a href=" https://code.visualstudio.com/docs/editor/emmet" tar get='_blank'>
-                Emmet</a> (optional)
-            </li>
-          </ul>
-        </section>
-      </section>
-
-      <section id='review'>
-        <h1>Review</h1>
-        <br>
-        <br>
-        <p>Any <code>ask-on-sunday</code> issues?</p>
-        <p>Any other Questions?</p>
-        <br>
-        <code>(~20 min)</code>
-      </section>
-
-      <section id='review'>
-        <h1>New Material</h1>
-        <br>
-        <br>
-        <p>An quick introduction to new concepts this week.</p>
-        <br>
-        <br>
-        <code>(~80 min)</code>
-      </section>
-
-      <section id='what-is-javascript'>
-        <section>
-          <h2>What is JavaScript?</h2>
-          <br>
-          <p>It's a programming language, but what's that?.</p>
-        </section>
-        <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
+        <section id='function-challenges'>
+          <script>
+            codeAlong({
+              container: 'function-challenges',
+              title: 'Function Challenges',
+              type: 'js',
+              source: [
+                {
+                  name: 'Pass Tests: once',
+                  path: '../javascript-basics/4-functions-and-test-cases/challenges/pass-tests-once.js'
+                },
+                {
+                  name: 'Pass Tests: twice',
+                  path: '../javascript-basics/4-functions-and-test-cases/challenges/pass-tests-twice.js'
+                },
+                {
+                  name: 'Write Tests: for one',
+                  path: '../javascript-basics/4-functions-and-test-cases/challenges/write-tests-for-one.js'
+                },
+                {
+                  name: 'Write Tests: for two',
+                  path: '../javascript-basics/4-functions-and-test-cases/challenges/write-tests-for-two.js'
+                },
+              ]
+            });
+          </script>
         </section>
       </section>
 
@@ -532,66 +566,162 @@
         <code>(~20 min)</code>
       </section>
 
-      <section id='stepped-flip-book'>
-        <script>
-          codeAlong({
-            title: 'Stepped Flip-Book',
-            container: 'stepped-flip-book',
-            type: 'document',
-            source: [
-              {
-                name: '0: Setup',
-                path: 'flip-book-stepped/0-setup.html'
-              },
-              {
-                name: '1: DOM',
-                path: 'flip-book-stepped/1-dom.html'
-              },
-              {
-                name: '2: Style',
-                path: 'flip-book-stepped/2-style.html'
-              },
-              {
-                name: '3: Listener',
-                path: 'flip-book-stepped/3-listener.html'
-              },
-              {
-                name: '4: Handler',
-                path: 'flip-book-stepped/4-handler.html'
-              },
-              {
-                name: '5: Logic',
-                path: 'flip-book-stepped/5-logic.html'
-              },
-            ]
-          })
-        </script>
+      <!--
+              working in steps
+                the steps
+                  0 setup
+                  1 dom
+                  2 styles
+                  3 listener
+                  4 handler
+                  5 logic
+                mirror-book example
+                mouse coordinates example
+              inspecting sources from devtools
+                live examples from in directory, link to gh-pages & source
+              code-along
+                a site that takes a sentence and finds substrings. optionally set substring to uppercase or lowercase
+              homework launch
+             -->
+
+
+      <section id='stepped-projects'>
+        <section>
+          <h2>Stepped Projects</h2>
+          <br>
+          <p>Two projects, built in steps</p>
+        </section>
+        <section id='stepped-mouse-coordinates'>
+          <script>
+            codeAlong({
+              title: 'Mouse Coordinates',
+              container: 'stepped-mouse-coordinates',
+              type: 'document',
+              source: [
+                {
+                  name: '0: Setup',
+                  path: 'mouse-coordinates-stepped/0-setup.html'
+                },
+                {
+                  name: '1: DOM',
+                  path: 'mouse-coordinates-stepped/1-dom.html'
+                },
+                {
+                  name: '2: Style',
+                  path: 'mouse-coordinates-stepped/2-style.html'
+                },
+                {
+                  name: '3: Listener',
+                  path: 'mouse-coordinates-stepped/3-listener.html'
+                },
+                {
+                  name: '4: Handler',
+                  path: 'mouse-coordinates-stepped/4-handler.html'
+                },
+                {
+                  name: '5: Logic',
+                  path: 'mouse-coordinates-stepped/5-logic.html'
+                },
+              ]
+            })
+          </script>
+        </section>
+        <section id='stepped-flip-book'>
+          <script>
+            codeAlong({
+              title: 'Flip-Book',
+              container: 'stepped-flip-book',
+              type: 'document',
+              source: [
+                {
+                  name: '0: Setup',
+                  path: 'flip-book-stepped/0-setup.html'
+                },
+                {
+                  name: '1: DOM',
+                  path: 'flip-book-stepped/1-dom.html'
+                },
+                {
+                  name: '2: Style',
+                  path: 'flip-book-stepped/2-style.html'
+                },
+                {
+                  name: '3: Listener',
+                  path: 'flip-book-stepped/3-listener.html'
+                },
+                {
+                  name: '4: Handler',
+                  path: 'flip-book-stepped/4-handler.html'
+                },
+                {
+                  name: '5: Logic',
+                  path: 'flip-book-stepped/5-logic.html'
+                },
+              ]
+            })
+          </script>
+        </section>
+
       </section>
 
-      <!--
-        - mouse & mirrorbook
-          two project-based case-studies?
-          stepped, then separated?
-        working in steps
-          the steps
-            0 setup
-            1 dom
-            2 styles
-            3 listener
-            4 handler
-            5 logic
-          mirror-book example
-          mouse coordinates example
-        inspecting sources from devtools
-          live examples from in directory, link to gh-pages & source
-        code-along
-          a site that takes a sentence and finds substrings. optionally set substring to uppercase or lowercase
-        homework launch
-       -->
+      <section id='separated-projects'>
+        <section>
+          <h2>Separated Concerns</h2>
+          <br>
+          <p>The same projects, separated into files</p>
+        </section>
+        <section>
+          <h3>Inspecting Sources</h3>
+          <br>
+          <!-- some helpful links on how to do this -->
+        </section>
+        <section>
+          <h3>a title</h3>
+          <br>
+          <ul>
+            <li><a href='./flip-book-separated' target='_blank'>
+                Flip Book</a></li>
+            <li><a href='./mouse-coordinates-separated' target='_blank'>
+                Mouse Coordinates</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Other Projects to Study</h3>
+          <br>
+          <p>How well are these separated?</p>
+          <br>
+          <ul>
+            <li><a href='https://janke-learning.org/arithmetic-coercion' target='_blank'>
+                Arithmetic Coercion</a></li>
+            <li><a href='https://janke-learning.org/equalities-coercion' target='_blank'>
+                Equalities Coercion</a></li>
+          </ul>
+        </section>
+      </section>
 
+      <section id='code-along'>
+        <section>
+          <h2>Code-Along</h2>
+          <br>
+          <p></p>
+        </section>
+        <section>
+          <h3>Starter Repo</h3>
+          <br>
+        </section>
+      </section>
 
+      <section id='homework-launch'>
+        <section>
+          <h2>Homework Launch</h2>
+          <br>
+          <p></p>
+        </section>
+        <section>
+        </section>
+      </section>
 
-      <section id='cover-slide'>
+      <section id='end-slide'>
         <h3>Separation of Concerns</h3>
         <br>
         <h2>Week 1</h2>

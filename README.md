@@ -16,7 +16,7 @@ The idea that a software system must be decomposed into parts that overlap in fu
 * [Learning Objectives](#learning-objectives)
 * [About the Projects](#about-the-projects)
 * [Homework Submission](https://github.com/hackyourfuturebelgium/homework-submission) (external)
-* Week 1:
+* Week 1: Isolate and Integrate
   * [Prep Work](./week-1)
   * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-1)
   * [Assignments](./week-1#assignments)
@@ -64,6 +64,7 @@ Understanding & applying these principles will help with testing, development sc
 * Tracing Program Execution
   * Stepping through with tools like JS Tutor & Devtools debugger
   * Tracing values manually with pencil & paper
+  * Using the `debugger` statement with the DevTools
 * Understand Behavior vs. Implementation
   * _Behavior_: The test cases that a function does and doesn't pass. What the function _does_.
   * _Implementation_: The actual lines of code written.  How memory is manipulated so that the behavior _happens_.

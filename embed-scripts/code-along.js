@@ -165,7 +165,7 @@ codeAlong.document = (iframe, steps, config) => {
   const stepsContainer = document.createElement('div');
 
   const editorContainer = document.createElement('div');
-  editorContainer.style = 'height:93%;width:55vw;';
+  editorContainer.style = 'height:98vh;width:55vw;';
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
@@ -194,6 +194,7 @@ codeAlong.document = (iframe, steps, config) => {
   });
 
   if (steps.length > 1) {
+    editorContainer.style = 'height:92vh;width:55vw;';
     const stepButtons = steps.map((step, index) => {
       const button = document.createElement('button');
       button.style.height = '30px'; // provisoire
@@ -273,7 +274,7 @@ codeAlong.document = (iframe, steps, config) => {
   outputEl.src = "data:text/html;charset=utf-8," + encodeURIComponent(steps[0].code);
 
   const outputContainer = document.createElement('div');
-  outputContainer.style = 'height: 100vh; width: 40vw; border:solid 1px; padding-left:1%; padding-right:1%;';
+  outputContainer.style = 'height: 98vh; width: 40vw; border:solid 1px; padding-left:1%; padding-right:1%;';
   if (typeof title === 'string') {
     const titleEl = document.createElement('h1');
     titleEl.innerHTML = title;
@@ -301,7 +302,7 @@ codeAlong.js = (iframe, steps, config) => {
   const stepsContainer = document.createElement('div');
 
   const editorContainer = document.createElement('div');
-  editorContainer.style = 'height:100vh;width:55vw;';
+  editorContainer.style = 'height:98vh;width:55vw;';
 
   const ace = iframe.contentWindow.ace;
   const editor = ace.edit(editorContainer);
@@ -337,6 +338,7 @@ codeAlong.js = (iframe, steps, config) => {
 
 
   if (steps.length > 1) {
+    editorContainer.style = 'height:90vh;width:55vw;';
     const stepButtons = steps.map((step, index) => {
       const button = document.createElement('button');
       button.style = 'height:35px;';
@@ -426,6 +428,29 @@ codeAlong.js = (iframe, steps, config) => {
   const buttonDiv = document.createElement('div');
   buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
   buttonDiv.appendChild(evaluate);
+  try {
+    // prettier.format;
+    js_beautify;
+
+    const formatCode = document.createElement('button');
+    formatCode.innerHTML = 'format code';
+    formatCode.addEventListener('click', () => {
+      editor.setValue(js_beautify(editor.getValue(), {
+        indent_size: 2,
+        "brace_style": "collapse,preserve-inline",
+      }))
+      // editor.setValue(
+      //   prettier.format(
+      //     editor.getValue(),
+      //     {
+      //       parser: "babel",
+      //       plugins: prettierPlugins
+      //     }
+      //   )
+      // )
+    });
+    buttonDiv.appendChild(formatCode);
+  } catch (e) { }
   buttonDiv.appendChild(jsTutorButton);
   // buttonDiv.appendChild(parsonizerButton);
 
@@ -440,7 +465,7 @@ codeAlong.js = (iframe, steps, config) => {
   resultsContainer.appendChild(initialResult);
 
   const outputContainer = document.createElement('div');
-  outputContainer.style = 'height: 100vh; width: 55vw; border:solid 1px;';
+  outputContainer.style = 'height: 98vh; width: 55vw; border:solid 1px;';
   if (typeof title === 'string') {
     const titleEl = document.createElement('h3');
     titleEl.innerHTML = title;
@@ -505,7 +530,7 @@ codeAlong.evaluate = (src) => {
   const renderPhase = didExecute => {
     const phaseEl = document.createElement('pre');
     const phase = didExecute ? 'Execution Phase' : "Creation Phase"
-    phaseEl.innerHTML = '   Caught during ' + phase;
+    phaseEl.innerHTML = '   caught during ' + phase;
     return phaseEl;
   }
 
@@ -515,7 +540,7 @@ codeAlong.evaluate = (src) => {
     const toEval = '(function editor() {didExecute = true;' + loopDetected + '})();';
     eval(toEval);
   } catch (err) {
-    const errOrWarning = err.name === 'HaltingError'
+    const errOrWarning = err.message === 'Loop exceeded 1000 iterations'
       ? renderHaltingWarning(err)
       : renderError(err);
     resultsEl.appendChild(errOrWarning);
@@ -569,7 +594,7 @@ codeAlong.haltingDetector = (() => {
     //  and keep simpler callstack for students
     const loopChecked = codeStr.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, loopHead => {
       const id = parseInt(Math.random() * Number.MAX_SAFE_INTEGER) // not guaranteed unique, but good enough
-      return `let __${id} = 0;${loopHead}codeAlong.haltingDetector(++__${id});`
+      return `let __${id} = 0;${loopHead}if (++__${id} > 1000) throw new Error('Loop exceeded 1000 iterations');`
     });
     return loopChecked;
     // const recursionChecked = loopChecked.replace(/for *\(.*\{|while *\(.*\{|do *\{/g, loopHead => {

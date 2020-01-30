@@ -1,5 +1,7 @@
 // declare & assign variables
-let a = 2, b = 1, temp = null;
+let a = 2;
+let b = 1;
+let temp = null;
 
 // swap the values stored by a and b ...
 

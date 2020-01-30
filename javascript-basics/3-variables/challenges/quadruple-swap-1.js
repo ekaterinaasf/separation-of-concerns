@@ -1,4 +1,7 @@
-let a = 3, b = 4, c = 1, d = 2;
+let a = 3;
+let b = 4;
+let c = 1;
+let d = 2;
 let temp = null;
 
 // write some code!

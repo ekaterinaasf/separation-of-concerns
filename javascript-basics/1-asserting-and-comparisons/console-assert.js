@@ -12,4 +12,6 @@ console.assert(true, 'this assert passes');
 console.assert(false, 'this assert fails');
 
 // PS. open your browser's console!
-// In the console, only failing asserts are logged
+// In the console, only failing asserts are displayed.
+// this is the standard behavior for console.assert
+// these slides will also displays passing asserts to help you study

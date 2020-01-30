@@ -1,7 +1,11 @@
 // write code to pass asserts a, b, c
 // fill in the blanks for d and temp
 
-let a = 2, b = 3, c = 1, temp = null;
+// leave this code
+let a = 2;
+let b = 3;
+let c = 1;
+let temp = null;
 
 temp = a;
 a = b;

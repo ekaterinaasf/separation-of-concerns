@@ -15,3 +15,7 @@ console.assert(
   "back-ticks ` create a string"
 );
 
+
+// + plus will CONCATENATE (stick together) multiple strings
+console.assert('a' + 'b' + 'c' === 'abc', 'fourth');
+console.assert('c' + 'b' + 'a' === 'cba', 'fifth');

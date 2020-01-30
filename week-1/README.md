@@ -1,6 +1,16 @@
-# Week 1
+# Week 1: Isolate and Integrate
 
-Putting it all together.
+## Isolating Code
+
+Learning when and how to break your code into small, isolated pieces is an important skill.  It will help you to develop and test your code, as well as making your code easier for others' to work with.
+
+When you do a good job of breaking your code into small pieces with clear & simples roles, each file also becomes an opportunity to focus in and study one aspect of JavaScript without overloading yourself.
+
+## Integrating Code
+
+Bringing separate pieces of code together to make a working whole is something you must learn as well! You'll basically never write an app entirely from nothing out of your head, not only is this unreasonably difficult but it's very inefficient.
+
+Learning how apps are structured and of the different roles code can play, you will gain the superpower of integration!  Building your projects quickly and efficiently by modifying & reusing code you or someone else has already written.
 
 * [Prep Work](#prep-work)
 * [Lesson Plan](#lesson-plan)
@@ -35,7 +45,7 @@ Putting it all together.
 
 ## Assignments
 
-This week there is 1 project, and 2 exercise sets.
+This week there is 1 project, and 3 exercise sets.
 
 ### Project
 
@@ -68,7 +78,7 @@ What are you waiting for, get coding!
 
 ### Exercises
 
-There are 2 sets of exercises to start this week:
+There are 3 sets of exercises to start this week:
 
 * Fork [using-user-input](https://github.com/hackyourfuturebelgium/using-user-input)
   * Turn on GitHub Pages
@@ -78,6 +88,11 @@ There are 2 sets of exercises to start this week:
   * Sign into FreeCodeCamp using your GitHub Account
   * Turn on your Public Profile
   * Complete [Basic JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/) up through [Golf Code](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/golf-code)
+  * Copy-paste each and every exercise into [JS Tutor](http://pythontutor.com/javascript.html#mode=edit) to get the most out of your studying!
+* Continue studying the exercises from in class
+  * You can study them live [in the lesson plan](https://hackyourfuture.be/separation-of-concerns/week-1)
+  * You can clone this repository and run [the source files](../javascript-basics) in Node.js
+  * Either way, study the exercises in [JS Tutor](http://pythontutor.com/javascript.html#mode=edit) and practice them until you can code them with your eyes closed.
 
 Looking for an extra challenge? Try solving each exercise on a different branch!
 

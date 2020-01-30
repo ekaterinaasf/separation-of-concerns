@@ -1,10 +1,14 @@
-// write code to pass asserts a, b
+// write code to pass asserts a and b
 // fill in the blanks for c and temp
 
-let a = 2, b = 1, temp = null;
+// leave this code
+let a = 2;
+let b = 1;
+let temp = null;
 
 temp = a;
 const c = temp;
+
 // write your code below here
 
 
