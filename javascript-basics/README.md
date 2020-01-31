@@ -1,3 +1,3 @@
-Before diving right into the exercises, take a read through `./how-to-study-these.js`
+plain old javascript files to study.
 
-
+you can study them live in the weekly lesson plans, or one at a time with Node.js

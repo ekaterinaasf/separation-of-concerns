@@ -60,7 +60,7 @@
       <section id='cover-slide'>
         <h3>Separation of Concerns</h3>
         <br>
-        <h2>Week 1</h2>
+        <h2>Week 1: Isolate & Integrate</h2>
         <br>
         <p>
           hit "s" for speaker notes
@@ -69,7 +69,6 @@
           -- back to repo --
         </a>
       </section>
-
 
       <section id='about-today'>
         <h1>About Today</h1>
@@ -110,6 +109,7 @@
             <li>Reading Input From Form Events</li>
             <li>String Manipulation</li>
             <li>Writing results to the DOM</li>
+            <li>Using the debugger statement</li>
           </ul>
         </section>
       </section>
@@ -171,6 +171,88 @@
         <code>(~80 min)</code>
       </section>
 
+      <section id='what-is-programming'>
+        <section>
+          <h2>What is Programming?</h2>
+          <br>
+          <p>It's a never-ending conversation.</p>
+        </section>
+        <section>
+          <h3>Programming is Communication</h3>
+          <br>
+          <p>
+            It's a continuous conversation between:
+          </p>
+          <ul>
+            <li>You and end users</li>
+            <li>You and other developers</li>
+            <li>You and the computer</li>
+            <li>You and your community</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Source Code the Text</h3>
+          <br>
+          <p>
+            The code you write is the center of this conversation.
+          </p>
+          <br>
+          <p>
+            The same code needs to say different things,
+            <br>to different audiences,
+            <br> at the same time!
+          </p>
+        </section>
+        <section>
+          <h3>End Users</h3>
+          <br>
+          <ul>
+            <li>Why should I use this?</li>
+            <li>How do I use it?</li>
+            <li>What does it do for me?</li>
+            <li>What does it do for others?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Other Developers</h3>
+          <br>
+          <ul>
+            <li>What is this code supposed to do?</li>
+            <li>What does it actually do?</li>
+            <li>How is it supposed to work?</li>
+            <li>Does it actually work?</li>
+            <li>How can I run it?</li>
+            <li>How can I contribute to it?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>The Computer</h3>
+          <br>
+          <ul>
+            <li>Can it understand these instructions?</li>
+            <li>Does it throw any errors?</li>
+            <li>What is the next instruction?</li>
+            <li>What changes in memory at this step?</li>
+          </ul>
+          <br>
+          <br>
+          <code>PS. the computer is always right.</code>
+        </section>
+        <section>
+          <h3>Your Community</h3>
+          <br>
+          <ul>
+            <li>What role does this project play?</li>
+            <li>How does it fit in?</li>
+            <li>How can this project help?</li>
+            <li>How could it cause problems?</li>
+          </ul>
+        </section>
+        <section>
+          <img src='./assets/rhetorical-situation.png' style='height:90vh' alt='rhetorical situation (Prachi Mehta)' />
+        </section>
+      </section>
+
       <section id='what-is-javascript'>
         <section>
           <h2>What is JavaScript?</h2>
@@ -178,13 +260,140 @@
           <p>It's a programming language, but what's that?.</p>
         </section>
         <section>
-          <h3>...</h3>
-          <br>
+          <h3>Programming languages?</h3>
           <p>
-            ...
+            .. are actually software!
           </p>
+          <br>
+          <ol>
+            <li>They interpret the code you write</li>
+            <li>Convert it to instructions for the computer</li>
+            <li>Follow the instructions</li>
+            <li>Then help you understand what happened</li>
+          </ol>
+        </section>
+        <section>
+          <h3>JavaScript ...</h3>
+          <br>
+          <ul>
+            <li>Is the language of the web</li>
+            <li>Adds interactivity to web pages</li>
+            <li>Can do soo much than expected</li>
+            <li>Will take a lot of work to understand</li>
+            <li>Will become your best frienemy</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Further Study</h3>
+          <br>
+          <ul>
+            <li><a href='https://www.youtube.com/watch?v=upDLs1sn7g4' target='_blank'>
+                Andrew Mosh
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=nItSSTwBvSU' target='_blank'>
+                Code School
+              </a></li>
+            <li><a href='https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript'
+                target='_blank'>
+                MDN: First Steps
+              </a></li>
+            <li><a href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics'
+                target='_blank'>
+                MDN: JS Basics
+              </a></li>
+            <li><a href='https://javascript.info/intro' target='_blank'>
+                javascript.info
+              </a></li>
+          </ul>
         </section>
       </section>
+
+      <section id='writing-readable-code'>
+        <section>
+          <h2>Writing Meaningful Code</h2>
+          <br>
+          <p>Code first for people, then for computers.</p>
+        </section>
+        <section>
+          <h3>Before Writing Your Code</h3>
+          <p>What will you build? Why build it?</p>
+          <br>
+          <ul>
+            <li>What should your end project do?</li>
+            <li>How will you know if it does?</li>
+            <li>Who is this end project for?</li>
+            <li>Write out your user stories!</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Before Running Your Code (1)</h3>
+          <p>Can you understand it?</p>
+          <br>
+          <ul>
+            <li>Are there any extra lines of code?</li>
+            <li>Is there any repeated code?</li>
+            <li>Can you explain it out loud?</li>
+            <li>Can you step through line by line?</li>
+            <li>Are your tests easy to understand?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Before Running Your Code (2)</h3>
+          <p>Can others understand it?</p>
+          <br>
+          <ul>
+            <li>Did you follow a style guide?</li>
+            <li>Are your variables well-named?</li>
+            <li>Do your tests help explain your code?</li>
+            <li>Did you use a linter? Formatter? Spell-Checker?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Try Running Your Code</h3>
+          <p>Does the computer understand it?</p>
+          <br>
+          <ul>
+            <li>What errors are logged?</li>
+            <li>Where did the errors occur in your code?</li>
+            <li>What kind of errors are they?</li>
+            <li>Are your relative paths correct?</li>
+            <li>Did you mis-spell anything?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Keep Testing Your Code!</h3>
+          <p>Does it do what you expected?</p>
+          <br>
+          <ul>
+            <li>What errors were logged?</li>
+            <li>Where were they, and what are they?</li>
+            <li>How can you fix them?</li>
+            <li>What did your project actually do?</li>
+            <li>Is that what you expected?</li>
+            <li>Do your tests pass?</li>
+            <li>Which tests failed, what does that show you?</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Finally it Works!</h3>
+          <p>Compare the end result to your initial plan</p>
+          <br>
+          <ul>
+            <li>Does it satisfy your user story?</li>
+            <li>Do you want to change your initial goal?</li>
+            <li>Do you need to change the project?</li>
+            <li>Are you tired and ready for some sun shine?</li>
+          </ul>
+        </section>
+      </section>
+
+
+      <section id='review'>
+        <h1>Isolating JavaScript</h1>
+        <br>
+        <p>A deep look inside program execution</p>
+      </section>
+
 
       <section id='getting-started'></section>
 
@@ -212,14 +421,14 @@
               source: [
                 {
                   name: 'console.assert',
-                  path: '../javascript-basics/1-asserting-and-comparisons/console-assert.js'
+                  path: '../javascript-basics/2-asserting-and-comparisons/console-assert.js'
                 },
                 {
                   name: '===, !==',
-                  path: '../javascript-basics/1-asserting-and-comparisons/strict-comparisons.js'
+                  path: '../javascript-basics/2-asserting-and-comparisons/strict-comparisons.js'
                 }, {
                   name: 'Pass the Tests!',
-                  path: '../javascript-basics/1-asserting-and-comparisons/pass-the-tests.js'
+                  path: '../javascript-basics/2-asserting-and-comparisons/pass-the-tests.js'
                 },
               ]
             })
@@ -249,11 +458,11 @@
               source: [
                 {
                   name: 'All primitives have a type',
-                  path: '../javascript-basics/2-primitive-types-and-values/typeof.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/typeof.js'
                 },
                 {
                   name: 'All types names are strings',
-                  path: '../javascript-basics/2-primitive-types-and-values/typeof-types.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/typeof-types.js'
                 },
               ]
             })
@@ -268,11 +477,11 @@
               source: [
                 {
                   name: 'Anything in quotes is a string',
-                  path: '../javascript-basics/2-primitive-types-and-values/strings.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/strings.js'
                 },
                 {
                   name: 'Strings: Quotes within Quotes',
-                  path: '../javascript-basics/2-primitive-types-and-values/strings-quotes-between-quotes.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/strings-quotes-between-quotes.js'
                 },
               ]
             })
@@ -287,7 +496,7 @@
               source: [
                 {
                   name: 'So many Numbers!',
-                  path: '../javascript-basics/2-primitive-types-and-values/numbers.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/numbers.js'
                 },
               ]
             })
@@ -302,7 +511,7 @@
               source: [
                 {
                   name: 'Booleans, undefined & null',
-                  path: '../javascript-basics/2-primitive-types-and-values/booleans-undefined-null.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/booleans-undefined-null.js'
                 }
               ]
             })
@@ -317,7 +526,7 @@
               source: [
                 {
                   name: 'Pass the Tests!',
-                  path: '../javascript-basics/2-primitive-types-and-values/pass-the-tests.js'
+                  path: '../javascript-basics/3-primitive-types-and-values/pass-the-tests.js'
                 }
               ]
             })
@@ -347,15 +556,15 @@
               source: [
                 {
                   name: 'Declare, Assign, Reassign',
-                  path: '../javascript-basics/3-variables/declaration-assignment-reassignment.js'
+                  path: '../javascript-basics/4-variables/declaration-assignment-reassignment.js'
                 },
                 {
                   name: 'Assignment vs. Comparison',
-                  path: '../javascript-basics/3-variables/assignment-vs-comparison.js'
+                  path: '../javascript-basics/4-variables/assignment-vs-comparison.js'
                 },
                 {
                   name: 'Variables are not typed',
-                  path: '../javascript-basics/3-variables/variables-are-not-typed.js'
+                  path: '../javascript-basics/4-variables/variables-are-not-typed.js'
                 },
               ]
             })
@@ -370,7 +579,7 @@
               source: [
                 {
                   name: 'const vs. let',
-                  path: '../javascript-basics/3-variables/const-vs-let.js'
+                  path: '../javascript-basics/4-variables/const-vs-let.js'
                 },
               ]
             })
@@ -385,19 +594,19 @@
               source: [
                 {
                   name: '0. Setup',
-                  path: '../javascript-basics/3-variables/stepped-value-swap/0-setup.js'
+                  path: '../javascript-basics/4-variables/stepped-value-swap/0-setup.js'
                 },
                 {
                   name: '1. Store 2 for later',
-                  path: '../javascript-basics/3-variables/stepped-value-swap/1-store-2.js'
+                  path: '../javascript-basics/4-variables/stepped-value-swap/1-store-2.js'
                 },
                 {
                   name: '2. Reassign a',
-                  path: '../javascript-basics/3-variables/stepped-value-swap/2-reassign-a.js'
+                  path: '../javascript-basics/4-variables/stepped-value-swap/2-reassign-a.js'
                 },
                 {
                   name: '3. Use stored 2',
-                  path: '../javascript-basics/3-variables/stepped-value-swap/3-use-stored-2.js'
+                  path: '../javascript-basics/4-variables/stepped-value-swap/3-use-stored-2.js'
                 },
               ]
             })
@@ -412,23 +621,23 @@
               source: [
                 {
                   name: 'Triple Swap',
-                  path: '../javascript-basics/3-variables/challenges/triple-swap.js'
+                  path: '../javascript-basics/4-variables/challenges/triple-swap.js'
                 },
                 {
                   name: 'Quad Swap 1',
-                  path: '../javascript-basics/3-variables/challenges/quadruple-swap-1.js'
+                  path: '../javascript-basics/4-variables/challenges/quadruple-swap-1.js'
                 },
                 {
                   name: 'Quad Swap 2',
-                  path: '../javascript-basics/3-variables/challenges/quadruple-swap-2.js'
+                  path: '../javascript-basics/4-variables/challenges/quadruple-swap-2.js'
                 },
                 {
                   name: 'let & const 1',
-                  path: '../javascript-basics/3-variables/challenges/let-and-const-1.js'
+                  path: '../javascript-basics/4-variables/challenges/let-and-const-1.js'
                 },
                 {
                   name: 'let & const 2',
-                  path: '../javascript-basics/3-variables/challenges/let-and-const-2.js'
+                  path: '../javascript-basics/4-variables/challenges/let-and-const-2.js'
                 },
               ]
             })
@@ -458,23 +667,23 @@
               source: [
                 {
                   name: 'Declaration vs. Execution',
-                  path: '../javascript-basics/4-functions-and-test-cases/101/declaration-vs-execution.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/101/declaration-vs-execution.js'
                 },
                 {
                   name: 'Parameters & Arguments',
-                  path: '../javascript-basics/4-functions-and-test-cases/101/parameters-and-arguments.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/101/parameters-and-arguments.js'
                 },
                 {
                   name: 'Scope',
-                  path: '../javascript-basics/4-functions-and-test-cases/101/scope.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/101/scope.js'
                 },
                 {
                   name: 'Return Values',
-                  path: '../javascript-basics/4-functions-and-test-cases/101/return-values.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/101/return-values.js'
                 },
                 {
                   name: 'Errors',
-                  path: '../javascript-basics/4-functions-and-test-cases/101/errors.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/101/errors.js'
                 },
               ]
             });
@@ -489,15 +698,15 @@
               source: [
                 {
                   name: 'How to Trace Execution',
-                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/how-to-trace-functions.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/tracing-execution/how-to-trace-functions.js'
                 },
                 {
                   name: 'Examples to Study',
-                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/examples-to-study.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/tracing-execution/examples-to-study.js'
                 },
                 {
                   name: 'Pass Some Tests!',
-                  path: '../javascript-basics/4-functions-and-test-cases/tracing-execution/pass-some-tests.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/tracing-execution/pass-some-tests.js'
                 },
               ]
             });
@@ -512,19 +721,19 @@
               source: [
                 {
                   name: 'Test Cases',
-                  path: '../javascript-basics/4-functions-and-test-cases/testing/test-cases.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/testing/test-cases.js'
                 },
                 {
                   name: 'Behavior vs. implementation',
-                  path: '../javascript-basics/4-functions-and-test-cases/testing/behavior-vs-implementation.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/testing/behavior-vs-implementation.js'
                 },
                 {
                   name: 'Pure Functions',
-                  path: '../javascript-basics/4-functions-and-test-cases/testing/pure-functions.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/testing/pure-functions.js'
                 },
                 {
                   name: 'Impure Functions',
-                  path: '../javascript-basics/4-functions-and-test-cases/testing/impure-functions.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/testing/impure-functions.js'
                 },
               ]
             });
@@ -539,19 +748,19 @@
               source: [
                 {
                   name: 'Pass Tests: once',
-                  path: '../javascript-basics/4-functions-and-test-cases/challenges/pass-tests-once.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/challenges/pass-tests-once.js'
                 },
                 {
                   name: 'Pass Tests: twice',
-                  path: '../javascript-basics/4-functions-and-test-cases/challenges/pass-tests-twice.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/challenges/pass-tests-twice.js'
                 },
                 {
                   name: 'Write Tests: for one',
-                  path: '../javascript-basics/4-functions-and-test-cases/challenges/write-tests-for-one.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/challenges/write-tests-for-one.js'
                 },
                 {
                   name: 'Write Tests: for two',
-                  path: '../javascript-basics/4-functions-and-test-cases/challenges/write-tests-for-two.js'
+                  path: '../javascript-basics/5-functions-and-test-cases/challenges/write-tests-for-two.js'
                 },
               ]
             });
@@ -566,24 +775,26 @@
         <code>(~20 min)</code>
       </section>
 
-      <!--
-              working in steps
-                the steps
-                  0 setup
-                  1 dom
-                  2 styles
-                  3 listener
-                  4 handler
-                  5 logic
-                mirror-book example
-                mouse coordinates example
-              inspecting sources from devtools
-                live examples from in directory, link to gh-pages & source
-              code-along
-                a site that takes a sentence and finds substrings. optionally set substring to uppercase or lowercase
-              homework launch
-             -->
 
+      <section id='review'>
+        <h1>Integrating JavaScript</h1>
+        <br>
+        <p>A high-level view of interactive web pages.</p>
+        <br>
+        <code>(~30 min)</code>
+      </section>
+
+
+      <section id='project-schematic'>
+        <section>
+          <h2>Project Schematic</h2>
+          <br>
+          <p>Visualizing your project architecture</p>
+        </section>
+        <section>
+          <img src='./assets/architecture-schematic.png' style='height:90vh' alt='architecture schematic' />
+        </section>
+      </section>
 
       <section id='stepped-projects'>
         <section>
@@ -612,11 +823,11 @@
                 },
                 {
                   name: '3: Listener',
-                  path: 'mouse-coordinates-stepped/3-listener.html'
+                  path: 'mouse-coordinates-stepped/3-listeners.html'
                 },
                 {
                   name: '4: Handler',
-                  path: 'mouse-coordinates-stepped/4-handler.html'
+                  path: 'mouse-coordinates-stepped/4-handlers.html'
                 },
                 {
                   name: '5: Logic',
@@ -668,15 +879,20 @@
         <section>
           <h2>Separated Concerns</h2>
           <br>
-          <p>The same projects, separated into files</p>
+          <p>The same projects, organized by role</p>
         </section>
         <section>
           <h3>Inspecting Sources</h3>
           <br>
-          <!-- some helpful links on how to do this -->
+          <ul>
+            <li><a href='https://developers.google.com/web/tools/chrome-devtools/sources' target='_blank'>
+                Chrome/ium: sources tab in the DevTools</a>
+            </li>
+            <li>Firefox: debugger tab in the DevTools</li>
+          </ul>
         </section>
         <section>
-          <h3>a title</h3>
+          <h3>Group Study</h3>
           <br>
           <ul>
             <li><a href='./flip-book-separated' target='_blank'>
@@ -686,10 +902,20 @@
           </ul>
         </section>
         <section>
-          <h3>Other Projects to Study</h3>
+          <h3>Further Study</h3>
           <br>
+          <ul>
+            <li><a href='https://kode-blog.io/javascript-separation-of-concerns' target='_blank'>
+                Hello World Example</a></li>
+            <li><a href='https://jonbellah.com/articles/separation-of-concerns/' target='_blank'>
+                Some helpful Suggestions</a></li>
+            <li><a
+                href='https://softwareengineering.stackexchange.com/questions/32581/how-do-you-explain-separation-of-concerns-to-others'
+                target='_blank'>
+                How would you explain it?</a></li>
+
+          </ul>
           <p>How well are these separated?</p>
-          <br>
           <ul>
             <li><a href='https://janke-learning.org/arithmetic-coercion' target='_blank'>
                 Arithmetic Coercion</a></li>
@@ -699,15 +925,66 @@
         </section>
       </section>
 
-      <section id='code-along'>
+      <section>
         <section>
-          <h2>Code-Along</h2>
+          <h2>JavaScript Debugger</h2>
           <br>
-          <p></p>
+          <p>Like JS Tutor for whole websites</p>
         </section>
         <section>
-          <h3>Starter Repo</h3>
+          <h3>References</h3>
           <br>
+          <ul>
+            <li>
+              <a href='https://javascript.info/debugging-chrome' target='_blank'>
+                Step-by-Step intro
+              </a>
+            </li>
+            <li>
+              <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger'
+                target='_blank'>
+                the <code>debugger</code> statement
+              </a>
+            </li>
+            <li>
+              <a href='https://www.youtube.com/watch?v=sK8KU8oiF8s' target='_blank'>
+                In FireFox
+              </a>
+            </li>
+            <li>
+              <a href='https://developers.google.com/web/tools/chrome-devtools/javascript/' target='_blank'>
+                In Chrome/ium
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section id='debugger-statement'>
+          <h3>
+            <a href='./debugger/index.html' target='_blank'>
+              Example to Study
+            </a>
+          </h3>
+          <br>
+          <p>
+            What happens when you refresh this example
+            <br> with your devtools open?
+          </p>
+        </section>
+      </section>
+
+
+      <section id='code-along'>
+        <section>
+          <h1>Code-Along</h1>
+          <br>
+          <code>(~70 min)</code>
+        </section>
+        <section>
+          <h3>
+            <a href='https://github.com/HackYourFutureBelgium/user-input-code-along' target='_blank'>
+              Starter Repo
+            </a>
+          </h3>
         </section>
       </section>
 
@@ -715,16 +992,41 @@
         <section>
           <h2>Homework Launch</h2>
           <br>
-          <p></p>
+          <p>It's only just beginning :)</p>
         </section>
         <section>
+          <h2><a href='https://github.com/hackyourfuturebelgium/separation-of-concerns/tree/master/week-1'
+              target='_blank'>
+              The Assignments</a></h2>
+        </section>
+        <section>
+          <h2><a href='https://github.com/HackYourFutureBelgium/homework-submission#weekly-issues' target='_blank'>
+              Weekly Issues</a></h2>
+          <p>if you haven't already, please create an issue and:</p>
+          <br>
+          <ol>
+            <li>Name it something helpful</li>
+            <li><a
+                href='https://help.github.com/en/github/managing-your-work-on-github/assigning-issues-and-pull-requests-to-other-github-users'
+                target='_blank'>
+                Assign</a>, it to yourself</li>
+            <li><a
+                href='https://help.github.com/en/github/managing-your-work-on-github/applying-labels-to-issues-and-pull-requests'
+                target='_blank'>
+                Label</a>, it <code>week-2</code></li>
+            <li><a href='https://help.github.com/en/github/managing-your-work-on-github/about-milestones'
+                target='_blank'>
+                Milestone</a> it <code>incremental-development</code></li>
+            <li>Fill in the assignments</li>
+            <li>Move it to the project board</li>
+          </ol>
         </section>
       </section>
 
-      <section id='end-slide'>
+      <section id='cover-slide'>
         <h3>Separation of Concerns</h3>
         <br>
-        <h2>Week 1</h2>
+        <h2>Week 1: Isolate & Integrate</h2>
         <br>
         <p>
           hit "s" for speaker notes

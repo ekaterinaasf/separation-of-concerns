@@ -132,17 +132,19 @@ codeAlong.setup = async (steps, config) => {
 
   iframe.onload = async () => {
 
-    await new Promise((resolve, reject) => {
-      const aceScript = document.createElement('script');
-      aceScript.src = "../embed-scripts/ace/ace.js";
-      aceScript.type = "text/javascript";
-      aceScript.charset = "utf-8";
+    try {
+      await new Promise((resolve, reject) => {
+        const aceScript = document.createElement('script');
+        aceScript.src = "../embed-scripts/ace/ace.js";
+        aceScript.type = "text/javascript";
+        aceScript.charset = "utf-8";
 
-      aceScript.addEventListener('load', () => resolve());
-      aceScript.addEventListener('error', (e) => reject(e.message))
+        aceScript.addEventListener('load', () => resolve());
+        aceScript.addEventListener('error', (e) => reject(e.message))
 
-      iframe.contentDocument.head.appendChild(aceScript);
-    });
+        iframe.contentDocument.head.appendChild(aceScript);
+      });
+    } catch (err) { console.log(err) };
 
     // async total side-effect
     if (config.type === 'document') {
