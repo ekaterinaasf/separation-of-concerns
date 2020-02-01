@@ -36,7 +36,9 @@
     // log the event to test the listener
     // expand the event in console to see what values it contains
     document.getElementById('user-interface')
-      .addEventListener('mousemove', event => console.log(event))
+      .addEventListener('mousemove', function handler(event) {
+        console.log(event);
+      })
   </script>
 </body>
 

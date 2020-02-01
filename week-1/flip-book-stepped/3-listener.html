@@ -34,7 +34,10 @@
   <script id='listeners'>
     // test the listener by logging the event and trying the thing
     // explore it in console to see what values you will be able to use later on
-    document.getElementById('input').addEventListener('keyup', e => console.log(e));
+    document.getElementById('input')
+      .addEventListener('keyup', function handler(event) {
+        console.log(event);
+      });
   </script>
 </body>
 
