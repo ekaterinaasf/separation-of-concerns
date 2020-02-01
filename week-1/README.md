@@ -91,7 +91,7 @@ There are 3 sets of exercises to start this week:
   * Copy-paste each and every exercise into [JS Tutor](http://pythontutor.com/javascript.html#mode=edit) to get the most out of your studying!
 * Continue studying the exercises from in class
   * You can study them live [in the lesson plan](https://hackyourfuture.be/separation-of-concerns/week-1)
-  * You can clone this repository and run [the source files](../javascript-basics) in Node.js
+  * You can clone this repository and try run [the source files](../javascript-basics) in Node.js
   * Either way, study the exercises in [JS Tutor](http://pythontutor.com/javascript.html#mode=edit) and practice them until you can code them with your eyes closed.
 
 Looking for an extra challenge? Try solving each exercise on a different branch!

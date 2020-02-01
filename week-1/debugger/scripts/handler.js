@@ -14,7 +14,7 @@ function handler(event) {
   // log action for developer
   console.log('--- user action ---');
   console.log('input:', typeof input + ',', input);
-  console.log('output', typeof output + ',', output);
+  console.log('output', typeof reversed + ',', reversed);
 
   // browser: continue default behavior
   return true;
