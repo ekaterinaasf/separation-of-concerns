@@ -453,15 +453,6 @@ codeAlong.js = (iframe, steps, config) => {
         indent_size: 2,
         "brace_style": "collapse,preserve-inline",
       }))
-      // editor.setValue(
-      //   prettier.format(
-      //     editor.getValue(),
-      //     {
-      //       parser: "babel",
-      //       plugins: prettierPlugins
-      //     }
-      //   )
-      // )
     });
     buttonDiv.appendChild(formatCode);
   } catch (e) { }

@@ -7,6 +7,7 @@ x = 4;
 function chimmy(a, b) {
   return a + z;
 }
+console.assert(chimmy(3, 4) === 7, '3 + 4 === 7');
 
 x();
 
