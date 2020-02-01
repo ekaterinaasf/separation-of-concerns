@@ -442,8 +442,6 @@ codeAlong.js = (iframe, steps, config) => {
   const buttonDiv = document.createElement('div');
   buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
   buttonDiv.appendChild(evaluate);
-  buttonDiv.appendChild(jsTutorButton);
-  buttonDiv.appendChild(linterButton);
   try {
     // prettier.format;
     js_beautify;
@@ -467,6 +465,8 @@ codeAlong.js = (iframe, steps, config) => {
     });
     buttonDiv.appendChild(formatCode);
   } catch (e) { }
+  buttonDiv.appendChild(jsTutorButton);
+  buttonDiv.appendChild(linterButton);
   // buttonDiv.appendChild(parsonizerButton);
 
 
