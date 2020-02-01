@@ -4,9 +4,9 @@ const testCases = [
   { name: 'first', args: [], expected: '(false) 1, 1 (false)' },
   { name: 'second', args: [], expected: '(true) 1, a (false)' },
   { name: 'third', args: [], expected: '(false) null, null (false)' },
-  { name: 'fourth', args: [NaN, NaN], expected: 'placeholder' },
-  { name: 'fifth', args: [], expected: 'placeholder' },
-  { name: 'sixth', args: [], expected: 'placeholder' },
+  { name: 'fourth', args: [NaN, NaN], expected: _ },
+  { name: 'fifth', args: [], expected: _ },
+  { name: 'sixth', args: [], expected: _ },
 
   // for the last two, find different arguments with the same expected value
   { name: 'seventh', args: [], expected: '(true) 1, 1 (true)' },

@@ -88,6 +88,18 @@
           </p>
         </section>
         <section>
+          <h3>The Big Picture</h3>
+          <br>
+          <ul>
+            <li>What is programming?</li>
+            <li>What are programming languages?</li>
+            <li>What is the role of source code?</li>
+            <li>Who are the audiences for you code?</li>
+            <li>What is the code authoring process?</li>
+            <li>How do you write meaningful code?</li>
+          </ul>
+        </section>
+        <section>
           <h3>Isolating JavaScript</h3>
           <br>
           <ul>
@@ -113,7 +125,6 @@
           </ul>
         </section>
       </section>
-
 
       <section id="installations">
         <section>
@@ -191,7 +202,7 @@
           </ul>
         </section>
         <section>
-          <h3>Source Code the Text</h3>
+          <h3>Source Code is the Text</h3>
           <br>
           <p>
             The code you write is the center of this conversation.
@@ -363,7 +374,6 @@
         <section>
           <h3>Keep Testing Your Code!</h3>
           <p>Does it do what you expected?</p>
-          <br>
           <ul>
             <li>What errors were logged?</li>
             <li>Where were they, and what are they?</li>
@@ -395,9 +405,110 @@
       </section>
 
 
-      <section id='getting-started'></section>
+      <section id='getting-started'>
+        <section>
+          <h2>Getting Started</h2>
+          <br>
+          <p>tips and guidance for these exercises</p>
+        </section>
+        <section>
+          <h3>Helpful Links</h3>
+          <p>Getting Started</p>
+          <br>
+          <ul>
+            <li><a href='https://javascript.info/structure' target='_blank'>
+                Code Structure
+              </a></li>
+            <li><a href='https://javascript.info/comments' target='_blank'>
+                Code Comments
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=E6ioMjZFhM0' target='_blank'>
+                console.assert
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=FUhWXaHa828' target='_blank'>
+                console.log
+              </a></li>
+          </ul>
+        </section>
+        <section id='getting-started-code-along'>
+          <script>
+            codeAlong({
+              title: 'Getting Started',
+              container: 'getting-started-code-along',
+              type: 'js',
+              source: [
+                {
+                  name: 'Study Tips',
+                  path: '../javascript-basics/0-getting-started/study-tips.js'
+                },
+                {
+                  name: 'About This Environment',
+                  path: '../javascript-basics/0-getting-started/about-this-environment.js'
+                }, {
+                  name: 'About JavaScript',
+                  path: '../javascript-basics/0-getting-started/about-javascript.js'
+                },
+              ]
+            })
+          </script>
+        </section>
+      </section>
 
-      <section id='life-cycle-and-errors'></section>
+      <section id='errors-and-life-cycle'>
+        <section>
+          <h2>Errors & Life-Cycle</h2>
+          <br>
+          <p>Source Code --> Creation Phase --> Execution Phase</p>
+        </section>
+        <section>
+          <h3>Helpful Links</h3>
+          <p>Errors & Life-Cycle</p>
+          <br>
+          <ul>
+            <li><a href='http://pythontutor.com/javascript.html' target='_blank'>
+                JS Tutor
+              </a></li>
+            <li><a href='https://github.com/janke-learning/errors-and-life-cycle' target='_blank'>
+                Errors & Program Life Cycle
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=vP-mn62EF0o' target='_blank'>
+                Syntax vs. Semantics
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=YID-HIdy1bk' target='_blank'>
+                Creation & Execution Phase
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=LuGsp5KeJMM' target='_blank'>
+                Errors and the Console (video)
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=O0EHKBi7iXU' target='_blank'>
+                Reading Error messages (video)
+              </a></li>
+          </ul>
+        </section>
+        <section id='ealc-code-along'>
+          <script>
+            codeAlong({
+              title: 'Errors & Program Life-Cycle',
+              container: 'ealc-code-along',
+              type: 'js',
+              source: [
+                {
+                  name: 'Source -> Creation -> Execution',
+                  path: '../javascript-basics/1-errors-and-life-cycle/source-creation-execution.js'
+                },
+                {
+                  name: 'Creation Phase Errors',
+                  path: '../javascript-basics/1-errors-and-life-cycle/creation-phase-errors.js'
+                },
+                {
+                  name: 'Execution Phase Errors',
+                  path: '../javascript-basics/1-errors-and-life-cycle/execution-phase-errors.js'
+                },
+              ]
+            })
+          </script>
+        </section>
+      </section>
 
       <section id='asserting-and-comparisons'>
         <section>
@@ -406,11 +517,20 @@
           <p>the basis of testing</p>
         </section>
         <section>
-          <h3>...</h3>
+          <h3>Helpful Links</h3>
+          <p>Asserting & Comparisons</p>
           <br>
-          <p>
-            ...
-          </p>
+          <ul>
+            <li><a href='https://www.youtube.com/watch?v=E6ioMjZFhM0' target='_blank'>
+                console.assert
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=0YicI4d7EbQ' target='_blank'>
+                Strict Comparison
+              </a></li>
+            <li><a href='https://javascript.info/types#boolean-logical-type' target='_blank'>
+                <code>true</code> and <code>false</code>
+              </a></li>
+          </ul>
         </section>
         <section id='console-assert'>
           <script>
@@ -443,11 +563,20 @@
           <p>The base units of programming</p>
         </section>
         <section>
-          <h3>...</h3>
+          <h3>Helpful Links</h3>
+          <p>Primitive Types & Values</p>
           <br>
-          <p>
-            ...
-          </p>
+          <ul>
+            <li><a href='https://javascript.info/types' target='_blank'>
+                JS Types (javascript.info)
+              </a></li>
+            <li><a href='https://github.com/janke-learning/primitive-types' target='_blank'>
+                Primitive Types (janke-learning)
+              </a></li>
+            <li><a href='https://kode-blog.io/javascript-primitive-types' target='_blank'>
+                Primitive Types (kode-blog)
+              </a></li>
+          </ul>
         </section>
         <section id='typeof'>
           <script>
@@ -541,11 +670,21 @@
           <p>Saving values for later</p>
         </section>
         <section>
-          <h3>...</h3>
+          <h3>Helpful Links</h3>
+          <p>Variables</p>
           <br>
-          <p>
-            ...
-          </p>
+          <ul>
+            <li><a href='https://www.youtube.com/watch?v=pHt_tKYUgbo&list=PLzV58Zm8FuBJFfQN5il3ujx6FDAY8Ds3u&index=2'
+                target='_blank'>
+                How variables work (video)
+              </a></li>
+            <li><a href='https://github.com/janke-learning/variable-exercises' target='_blank'>
+                more variable exercises
+              </a></li>
+            <li><a href='https://github.com/janke-learning/undeclared-variables' target='_blank'>
+                undeclared vs. <code>undefined</code>
+              </a></li>
+          </ul>
         </section>
         <section id='variables-101'>
           <script>
@@ -652,11 +791,27 @@
           <p>Same instructions, different values</p>
         </section>
         <section>
-          <h3>...</h3>
-          <br>
-          <p>
-            ...
-          </p>
+          <h3>Helpful Links</h3>
+          <p>Functions & Test Cases</p>
+          <ul>
+            <li><a href='https://www.youtube.com/watch?v=bJUmxDsaduY&list=PLzV58Zm8FuBJFfQN5il3ujx6FDAY8Ds3u&index=6'
+                target='_blank'>
+                How functions work (Philip Guo)
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=R8SjM4DKK80' target='_blank'>
+                How functions work (Beau)
+              </a></li>
+            <li><a href='https://www.youtube.com/watch?v=Tvu1FqhOUrQ' target='_blank'>
+                How functions work (mmtuts)
+              </a></li>
+            <li><a href='https://github.com/janke-learning/function-exercises/blob/master/tracing-functions.md'
+                target='_blank'>
+                Tracing function execution
+              </a></li>
+            <li><a href='https://github.com/janke-learning/function-exercises' target='_blank'>
+                More function exercises
+              </a></li>
+          </ul>
         </section>
         <section id='functions-101'>
           <script>
@@ -879,7 +1034,7 @@
         <section>
           <h2>Separated Concerns</h2>
           <br>
-          <p>The same projects, organized by role</p>
+          <p>The same projects, separated by concern</p>
         </section>
         <section>
           <h3>Inspecting Sources</h3>
@@ -888,7 +1043,10 @@
             <li><a href='https://developers.google.com/web/tools/chrome-devtools/sources' target='_blank'>
                 Chrome/ium: sources tab in the DevTools</a>
             </li>
-            <li>Firefox: debugger tab in the DevTools</li>
+            <li><a href='https://extensionworkshop.com/documentation/develop/debugging/#debugging-content-scripts'
+                target='_blank'>
+                Firefox: debugger tab in the DevTools</a>
+            </li>
           </ul>
         </section>
         <section>

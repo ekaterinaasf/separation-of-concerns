@@ -1,9 +1,10 @@
 const testCases = [
-  { name: 'first', args: [], expected: 'placeholder' },
-  { name: 'second', args: [], expected: 'placeholder' },
-  { name: 'third', args: [], expected: 'placeholder' },
-  { name: 'fourth', args: [], expected: 'placeholder' },
-  { name: 'fifth', args: [], expected: 'placeholder' },
+  // replace null with the correct expected value
+  { name: 'first', args: [], expected: null },
+  { name: 'second', args: [], expected: null },
+  { name: 'third', args: [], expected: null },
+  { name: 'fourth', args: [], expected: null },
+  { name: 'fifth', args: [], expected: null },
 
   // can you find 3 different arguments that result in 'placeholder'?
   { name: 'sixth', args: [], expected: 'placeholder' },

@@ -414,6 +414,18 @@ codeAlong.js = (iframe, steps, config) => {
     window.open(jsTutorURL, '_blank');
   };
 
+  const linterButton = document.createElement('button');
+  linterButton.innerHTML = 'open in JSHint';
+  linterButton.onclick = () => {
+    const encodedLintee = encodeURIComponent(editor.getValue());
+    const sanitizedLintee = encodedLintee
+      .replace(/\(/g, '%28').replace(/\)/g, '%29')
+      .replace(/%09/g, '%20%20');
+    // const jsTutorURL = "http://www.pythontutor.com/live.html#code=" + sanitizedJST + "&cumulative=false&curInstr=2&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false";
+    const linterURL = "http://janke-learning.org/linter/?snippet=" + sanitizedLintee;
+    window.open(linterURL, '_blank');
+  };
+
   {/* build parsonizer button
         const parsonizerButton = document.createElement('button');
         parsonizerButton.innerHTML = 'Parsonzier';
@@ -430,6 +442,8 @@ codeAlong.js = (iframe, steps, config) => {
   const buttonDiv = document.createElement('div');
   buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
   buttonDiv.appendChild(evaluate);
+  buttonDiv.appendChild(jsTutorButton);
+  buttonDiv.appendChild(linterButton);
   try {
     // prettier.format;
     js_beautify;
@@ -453,7 +467,6 @@ codeAlong.js = (iframe, steps, config) => {
     });
     buttonDiv.appendChild(formatCode);
   } catch (e) { }
-  buttonDiv.appendChild(jsTutorButton);
   // buttonDiv.appendChild(parsonizerButton);
 
 
@@ -469,7 +482,7 @@ codeAlong.js = (iframe, steps, config) => {
   const outputContainer = document.createElement('div');
   outputContainer.style = 'height: 98vh; width: 55vw; border:solid 1px;';
   if (typeof title === 'string') {
-    const titleEl = document.createElement('h3');
+    const titleEl = document.createElement('h1');
     titleEl.innerHTML = title;
     titleEl.style = 'text-align: center;';
     outputContainer.appendChild(titleEl);

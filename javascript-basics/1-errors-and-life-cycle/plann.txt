@@ -14,3 +14,8 @@ reading errors
   * the first line under the error will starte with have the word 'editor'
   * now go to the far right of that line and you'll see two numbers x:y
   * those numbers are the line number & charecter number where the error occurred
+
+
+these examples
+validation in project
+study links in study.hyf.be

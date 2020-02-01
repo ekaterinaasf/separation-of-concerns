@@ -1,4 +1,3 @@
-1. `about-the-editor.js`
-2. `about-javascript.js`
-3. `practice-until-its-easy.js`
-4. `other-ways-to-study.js`
+1. `study-tips.js`
+2. `about-this-environment.js`
+3. `about-javascript.js`

@@ -3,6 +3,7 @@
 // RETURN VALUES allow you to use values after execution has ended
 function describeValue(parameter) {
   return (typeof parameter) + ', ' + parameter;
+  console.assert(true, 'nothing is executed after a return statement!');
 }
 
 // to save return values for later, assign them to a variable

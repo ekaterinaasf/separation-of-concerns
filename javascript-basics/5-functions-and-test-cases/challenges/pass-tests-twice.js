@@ -1,3 +1,4 @@
+// Psst, google the && operator.  it will help a lot!
 const testCases = [
   { name: 'first', args: [true, true, true], expected: true },
   { name: 'second', args: [1e5, NaN, Infinity], expected: true },
