@@ -1,7 +1,7 @@
 // -- Source Code --
 //  the code you write, save, read, push/pull, edit ... it's just text
 //    there are no errors or logs because there is no running program!
-//  Static Analysis: reading code without running it
+//  Static Analysis: some errors can be found without running the code
 //    linters like ESlint and JSHint are common tools for this task
 //    click on "open in JSHint" to lint any of these exercises
 
