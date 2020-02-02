@@ -47,7 +47,7 @@ Learning how apps are structured and of the different roles code can play, you w
 
 This week there is 1 project, and 3 exercise sets.
 
-### Project
+### Project: `calculator-refactor`
 
 > [Starter Code](http://hackyourfuture.be/homework-submission/#projects)
 
