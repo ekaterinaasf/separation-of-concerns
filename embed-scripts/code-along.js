@@ -545,7 +545,14 @@ codeAlong.js = (iframe, steps, config) => {
 
 codeAlong.evaluateInDebugger = (src) => {
   const debuggered = 'debugger; // injected by code-along script\n\n' + src;
-  eval(debuggered);
+  try {
+    eval(debuggered);
+  } catch (err) {
+    console.log(err);
+  };
+  const debuggeredEl = document.createElement('pre');
+  debuggeredEl.innerHTML = `      Psst. Open your DevTools!`;
+  return debuggeredEl;
 }
 
 codeAlong.evaluateInCodeAlong = (src) => {
