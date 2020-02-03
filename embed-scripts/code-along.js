@@ -495,16 +495,21 @@ codeAlong.js = (iframe, steps, config) => {
   buttonDiv.appendChild(evaluateInCodeAlong);
   buttonDiv.appendChild(evaluateInDebugger);
   try {
-    // prettier.format;
-    js_beautify;
+    // does it exist?
+    js_beautify('', {
+      indent_size: '  ',
+      "brace_style": "collapse,preserve-inline",
+    })
 
     const formatCode = document.createElement('button');
     formatCode.innerHTML = 'format code';
     formatCode.addEventListener('click', () => {
-      editor.setValue(js_beautify(editor.getValue(), {
+      const beautified = js_beautify(editor.getValue(), {
         indent_size: 2,
         "brace_style": "collapse,preserve-inline",
-      }))
+      })
+      console.log(beautified)
+      editor.setValue(beautified);
     });
     buttonDiv.appendChild(formatCode);
   } catch (e) { }
