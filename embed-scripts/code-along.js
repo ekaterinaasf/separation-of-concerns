@@ -508,7 +508,6 @@ codeAlong.js = (iframe, steps, config) => {
         indent_size: 2,
         "brace_style": "collapse,preserve-inline",
       })
-      console.log(beautified)
       editor.setValue(beautified);
     });
     buttonDiv.appendChild(formatCode);
