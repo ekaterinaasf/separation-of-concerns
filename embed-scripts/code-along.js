@@ -27,6 +27,44 @@
   }
 }
 
+// do this with highlight.js? - nope, then extra dependency
+const codeAlongGuide = `
+evaluate code: will run the code in the current editor ---
+    ... capture asserts to display pass/fail
+    ... stop your code after 1000+ loop iterations
+    ... produce helpful callstacks
+    ... indicate if errors were Creation or Execution phase
+    ... remove all debugger statements
+step through in Debugger: will run the current editor ---
+    ... insert a debugger statement before the first line
+    ... your debugger must be open for this to work!
+Format Code: will make code in the current editor prettier ---
+Open In Js Tutor: will open the current code in JS Tutor ---
+    ... it will step through your code's execution line by line
+    ... shows what is happening in programming memory
+    ... will help understand errors, including creation/execution
+    ... use this button ALL THE TIME!
+Open In JSHint: opens your code in an online Linter that will ---
+    ... point out syntax errors
+    ... warn about some bad practices
+    ... warn about possible runtime errors
+    ... evaluate the complexity of your code
+`;
+
+
+// a "programming environment" is anywhere you can edit and run code
+// this environment is designed to help you take your first steps
+
+// - your code will be colored for easy reading
+// - ctr-z will undo changes you made
+// - ctr-shift-z will redo the changes
+// - ctr-c will copy any highlighted text
+// - ctr-v will paste the copied text
+// - icons to the left of your code help with errors & syntax
+// - changes ARE NOT saved when you refresh the web page
+// - changes ARE saved when switching between exercises
+
+
 
 async function codeAlong(config) {
 
@@ -393,11 +431,20 @@ codeAlong.js = (iframe, steps, config) => {
 
   editor.setValue(steps[0].code);
 
-  const evaluate = document.createElement('button');
-  evaluate.innerHTML = 'evaluate code';
-  evaluate.addEventListener('click', function evaluationHandler() {
+  const evaluateInCodeAlong = document.createElement('button');
+  evaluateInCodeAlong.innerHTML = 'evaluate code';
+  evaluateInCodeAlong.addEventListener('click', function evaluationHandler() {
     resultsContainer.innerHTML = '';
-    const results = codeAlong.evaluate(editor.getValue());
+    const results = codeAlong.evaluateInCodeAlong(editor.getValue());
+    // active.results = results;
+    resultsContainer.appendChild(results);
+  });
+
+  const evaluateInDebugger = document.createElement('button');
+  evaluateInDebugger.innerHTML = 'step through in debugger';
+  evaluateInDebugger.addEventListener('click', function evaluationHandler() {
+    resultsContainer.innerHTML = '';
+    const results = codeAlong.evaluateInDebugger(editor.getValue());
     // active.results = results;
     resultsContainer.appendChild(results);
   });
@@ -426,6 +473,10 @@ codeAlong.js = (iframe, steps, config) => {
     window.open(linterURL, '_blank');
   };
 
+  const buttonsButton = document.createElement('button');
+  buttonsButton.innerHTML = 'so many buttons?';
+  buttonsButton.onclick = () => alert(codeAlongGuide);
+
   {/* build parsonizer button
         const parsonizerButton = document.createElement('button');
         parsonizerButton.innerHTML = 'Parsonzier';
@@ -441,7 +492,8 @@ codeAlong.js = (iframe, steps, config) => {
 
   const buttonDiv = document.createElement('div');
   buttonDiv.style = 'margin-top:2%;margin-bottom:2%;text-align:center;';
-  buttonDiv.appendChild(evaluate);
+  buttonDiv.appendChild(evaluateInCodeAlong);
+  buttonDiv.appendChild(evaluateInDebugger);
   try {
     // prettier.format;
     js_beautify;
@@ -456,8 +508,10 @@ codeAlong.js = (iframe, steps, config) => {
     });
     buttonDiv.appendChild(formatCode);
   } catch (e) { }
+  buttonDiv.appendChild(document.createElement('br'));
   buttonDiv.appendChild(jsTutorButton);
   buttonDiv.appendChild(linterButton);
+  buttonDiv.appendChild(buttonsButton);
   // buttonDiv.appendChild(parsonizerButton);
 
 
@@ -489,8 +543,12 @@ codeAlong.js = (iframe, steps, config) => {
 
 }
 
+codeAlong.evaluateInDebugger = (src) => {
+  const debuggered = 'debugger; // injected by code-along script\n\n' + src;
+  eval(debuggered);
+}
 
-codeAlong.evaluate = (src) => {
+codeAlong.evaluateInCodeAlong = (src) => {
   const resultsEl = document.createElement('ol');
   // console.clear();
 
@@ -542,7 +600,9 @@ codeAlong.evaluate = (src) => {
 
   let didExecute = false;
   try {
-    const loopDetected = codeAlong.haltingDetector.wrap(src);
+    const deDebuggered = codeAlong.deDebugger(src);
+    console.log(deDebuggered)
+    const loopDetected = codeAlong.haltingDetector.wrap(deDebuggered);
     const toEval = '(function editor() {didExecute = true;' + loopDetected + '})();';
     eval(toEval);
   } catch (err) {
@@ -560,6 +620,24 @@ codeAlong.evaluate = (src) => {
   return resultsEl;
 
 }
+
+codeAlong.deDebugger = code => code
+  .replace(';debugger;', '')
+  .replace(' debugger;', '')
+  .replace('\tdebugger;', '')
+  .replace('\ndebugger;', '')
+  .replace(';debugger ', '')
+  .replace(' debugger ', '')
+  .replace('\tdebugger ', '')
+  .replace('\ndebugger ', '')
+  .replace(';debugger\t', '')
+  .replace(' debugger\t', '')
+  .replace('\tdebugger\t', '')
+  .replace('\ndebugger\t', '')
+  .replace(';debugger\n', '')
+  .replace(' debugger\n', '')
+  .replace('\tdebugger\n', '')
+  .replace('\ndebugger\n', '');
 
 
 codeAlong.haltingDetector = (() => {
@@ -614,3 +692,4 @@ codeAlong.haltingDetector = (() => {
 
   return haltingDetector
 })();
+
