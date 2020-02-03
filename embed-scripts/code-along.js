@@ -37,7 +37,7 @@ evaluate code: will run the code in the current editor ---
     ... remove all debugger statements
 step through in Debugger: will run the current editor ---
     ... insert a debugger statement before the first line
-    ... your debugger must be open for this to work!
+    ... your devtools must be open for this to work
 Format Code: will make code in the current editor prettier ---
 Open In Js Tutor: will open the current code in JS Tutor ---
     ... it will step through your code's execution line by line
