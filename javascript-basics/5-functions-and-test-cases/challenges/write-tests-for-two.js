@@ -1,15 +1,15 @@
 const testCases = [
   // replace null with the correct expected value
-  { name: 'first', args: [], expected: null },
-  { name: 'second', args: [], expected: null },
-  { name: 'third', args: [], expected: null },
-  { name: 'fourth', args: [], expected: null },
-  { name: 'fifth', args: [], expected: null },
+  { name: 'first', args: [1, 2, 3], expected: 6 },
+  { name: 'second', args: ['a', 'b', 'c'], expected: 'cba' },
+  { name: 'third', args: ['1', 'a', '3'], expected: '3a1' },
+  { name: 'fourth', args: ['a', 'b', 'a'], expected: 'aba' },
+  { name: 'fifth', args: [0, 4, 1], expected: 5 },
 
   // can you find 3 different arguments that result in 'placeholder'?
-  { name: 'sixth', args: [], expected: 'placeholder' },
-  { name: 'seventh', args: [], expected: 'placeholder' },
-  { name: 'eighth', args: [], expected: 'placeholder' },
+  { name: 'sixth', args: ['der', 'acehol', 'pl'], expected: 'placeholder' },
+  { name: 'seventh', args: ['r','laceholde', 'p'], expected: 'placeholder' },
+  { name: 'eighth', args: ['aceholder','l','p'], expected: 'placeholder' },
 ]
 
 function one(x, y, z) {
