@@ -170,7 +170,7 @@ Good luck!
 
 ---
 
-![[food, not food](https://deviq.com/separation-of-concerns/)](./separation-of-concerns.png)
+![[food, not food](https://deviq.com/separation-of-concerns/)](./assets/separation-of-concerns.png)
 
 ---
 ---
