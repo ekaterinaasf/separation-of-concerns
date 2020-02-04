@@ -23,7 +23,11 @@ testCases.forEach(function (test) {
 });
 
 // write different code to pass the same tests!
-function two() {
+function two(a, b, c) {
+    if ((typeof a === typeof c) && (typeof b === typeof c))
+    return true;
+    else return false;
+
 
 }
 testCases.forEach(function (test) {
