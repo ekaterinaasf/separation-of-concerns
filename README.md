@@ -20,7 +20,7 @@ The idea that a software system must be decomposed into parts that overlap in fu
   * [Prep Work](./week-1)
   * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-1)
   * [Assignments](./week-1#assignments)
-* Week 2:
+* Week 2: `debugger`
   * [Prep Work](./week-2)
   * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-2)
   * [Assignments](./week-2#assignments)
@@ -109,6 +109,7 @@ Understanding & applying these principles will help with testing, development sc
   * _Implicit Coercion_: What happens when you try to combine different types?
   * Logical Operators
   * String operators
+  * Operator Precedence
 * Statements vs. Expressions
   * case study: ternaries vs. if/else
 * Control Flow
