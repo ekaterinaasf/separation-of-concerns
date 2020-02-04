@@ -10,7 +10,11 @@ const testCases = [
 ];
 
 // write some code to pass the tests
-function one() {
+  function one(a, b, c) {
+    if ((typeof a === typeof b) && (typeof b === typeof c))
+    return true;
+    else return false;
+
 
 }
 testCases.forEach(function (test) {
