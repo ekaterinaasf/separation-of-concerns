@@ -15,7 +15,6 @@ The idea that a software system must be decomposed into parts that overlap in fu
 * [Module Summary](#module-summary)
 * [Learning Objectives](#learning-objectives)
 * [About the Projects](#about-the-projects)
-* [Homework Submission](https://github.com/hackyourfuturebelgium/homework-submission) (external)
 * Week 1: Isolate and Integrate
   * [Prep Work](./week-1)
   * [Lesson Plan](https://hackyourfuture.be/separation-of-concerns/week-1)
@@ -31,6 +30,7 @@ The idea that a software system must be decomposed into parts that overlap in fu
 * [Deeper Dives](./deeper-dives.md)
 * [Class Recordings](./class-recordings.md)
 * [Study Links](https://study.hackyourfuture.be) (external)
+* [Homework Submission](https://github.com/hackyourfuturebelgium/homework-submission) (external)
 
 ---
 

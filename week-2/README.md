@@ -26,7 +26,8 @@ Study the [Sunday lesson plan](https://hackyourfuture.be/separation-of-concerns/
 ### Isolating JavaScript
 
 * Type Conversions: [javascript.info/type-conversions](https://javascript.info/type-conversions)
-* Operators: [javascript.info/operators](https://javascript.info/operators)
+* Operators & Comparisons: [javascript.info/operators](https://javascript.info/operators), [javascript.info/comparison](https://javascript.info/comparison)
+* Truthiness: [janke-learning/truthiness](https://github.com/janke-learning/truthiness)
 * Loops: [javascript.info/while-for](https://javascript.info/while-for) and complete the tasks
 
 ### Integrating JavaScript
